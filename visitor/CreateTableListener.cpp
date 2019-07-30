@@ -12,7 +12,7 @@ void CreateTableListener::exitCreateTable(parsers::MySQLParser::CreateTableConte
     if (context->LIKE_SYMBOL())
         result.set_like_table(context->tableRef()->getText());
 
-    cout << result.name() << endl;
+//    cout << result.name() << endl;
 //    to_json();
 }
 
