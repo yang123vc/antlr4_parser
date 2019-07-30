@@ -3,14 +3,17 @@
 //
 
 #include "CreateTableListener.h"
-#include <boost/property_tree/json_parser.hpp>
-#include <boost/property_tree/ptree.hpp>
+//#include <boost/property_tree/json_parser.hpp>
+//#include <boost/property_tree/ptree.hpp>
 
 void CreateTableListener::exitCreateTable(parsers::MySQLParser::CreateTableContext *context) {
-    tableName = context->tableName()->getText();
+    result.set_name(context->tableName()->getText());
+
     if (context->LIKE_SYMBOL())
-        likeTable = context->tableRef()->getText();
-    to_json();
+        result.set_like_table(context->tableRef()->getText());
+
+    cout << result.name() << endl;
+//    to_json();
 }
 
 void CreateTableListener::exitTableElement(parsers::MySQLParser::TableElementContext *context) {
@@ -18,75 +21,64 @@ void CreateTableListener::exitTableElement(parsers::MySQLParser::TableElementCon
 }
 
 void CreateTableListener::exitColumnDefinition(parsers::MySQLParser::ColumnDefinitionContext *context) {
-    columnDefinition colDef;
-    colDef.name = context->columnName()->getText();
-    auto fieldDefinition = context->fieldDefinition();
-    colDef.typ = fieldDefinition->dataType()->type->getText();
+    auto column = result.add_columns();
 
-    for (auto attr:fieldDefinition->columnAttribute()) {
-        colDef.attrs.emplace_back(attr->getText());
+    column->set_name(context->columnName()->getText());
+
+    auto fieldDefinition = context->fieldDefinition();
+    column->set_type(fieldDefinition->dataType()->type->getText());
+
+    for (auto attr: fieldDefinition->columnAttribute()) {
+        column->add_attributes(attr->getText());
     }
-    columns.emplace_back(colDef);
 }
 
 void CreateTableListener::exitTableConstraintDef(parsers::MySQLParser::TableConstraintDefContext *context) {
-    constrainDefinition constrain;
-    constrain.typ = context->type->getText();
+    auto constrain = result.add_constrains();
+    constrain->set_type(context->type->getText());
 
     if (context->indexName())
-        constrain.name = context->indexName()->getText();
+        constrain->set_name(context->indexName()->getText());
     else if (context->indexNameAndType())
-        constrain.name = context->indexNameAndType()->getText();
+        constrain->set_name(context->indexNameAndType()->getText());
 
     if (context->keyList()) {
         for (auto k:context->keyList()->keyPart())
-            constrain.columns.emplace_back(k->identifier()->getText());
+            constrain->add_columns(k->identifier()->getText());
     } else if (context->keyListVariants()) {
         if (context->keyListVariants()->keyList()) {
             for (auto k:context->keyListVariants()->keyList()->keyPart())
-                constrain.columns.emplace_back(k->identifier()->getText());
+                constrain->add_columns(k->identifier()->getText());
         } else {
             for (auto k:context->keyListVariants()->keyListWithExpression()->keyPartOrExpression())
-                constrain.columns.emplace_back(k->getText());
+                constrain->add_columns(k->getText());
         }
     }
-    constrains.emplace_back(constrain);
 }
 
 void CreateTableListener::exitCreateTableOption(parsers::MySQLParser::CreateTableOptionContext *context) {
-    pair<string, string> opt;
+    result.mutable_options();
+    string k, v;
     if (context->SECONDARY_ENGINE_SYMBOL()) {
-        opt.first = "SECONDARY_ENGINE";
-        opt.second = context->NULL_SYMBOL() ? context->NULL_SYMBOL()->getText()
-                                            : context->textStringLiteral()->getText();
-        options.insert(opt);
-        return;
-    }
-    if (context->option) {
-        opt.first = context->option->getText();
+        k = "SECONDARY_ENGINE";
+        v = context->NULL_SYMBOL() ? context->NULL_SYMBOL()->getText()
+                                   : context->textStringLiteral()->getText();
+    } else if (context->option) {
+        k = context->option->getText();
         auto children = context->children;
-        opt.second = children.at(children.size()-1)->getText();
-//        opt.second = context->children.at(1)->getText();
-        options.insert(opt);
-        return;
+        v = children.at(children.size() - 1)->getText();
+    } else if (context->defaultCharset()) {
+        k = "DEFAULT_CHARSET";
+        v = context->defaultCharset()->charsetName()->getText();
+    } else if (context->defaultCollation()) {
+        k = "DEFAULT_COLLATION";
+        v = context->defaultCollation()->collationName()->getText();
     }
-    if (context->defaultCharset()) {
-        opt.first = "DEFAULT_CHARSET";
-        opt.second = context->defaultCharset()->charsetName()->getText();
-        options.insert(opt);
-        return;
-    }
-    if (context->defaultCollation()) {
-        opt.first = "DEFAULT_COLLATION";
-        opt.second = context->defaultCollation()->collationName()->getText();
-        options.insert(opt);
-        return;
-    }
-
+    result.mutable_options()->insert({k, v});
 }
 
 void CreateTableListener::exitPartitionClause(parsers::MySQLParser::PartitionClauseContext *context) {
-    hasPartition = true;
+    result.set_has_partition(true);
 }
 
 
@@ -94,29 +86,29 @@ void CreateTableListener::exitCreateTableOptions(parsers::MySQLParser::CreateTab
 //    cout << context->getText() << endl;
 }
 
-string CreateTableListener::to_json() {
-    json.put("table_name", tableName);
-
-    boost::property_tree::ptree colsNode;
-    for (auto col:columns) {
-        colsNode.push_back(make_pair("", col.ptree()));
-    }
-    json.add_child("columns", colsNode);
-
-    boost::property_tree::ptree consNode;
-    for (auto cons:constrains) {
-        consNode.push_back(make_pair("", cons.ptree()));
-    }
-    json.add_child("constrains", consNode);
-
-    boost::property_tree::ptree optsNode;
-    for (auto opt:options) {
-        optsNode.put(opt.first, opt.second);
-    }
-    json.add_child("options", optsNode);
-
-    boost::property_tree::write_json(cout, json);
-    return "";
-}
-
-
+//string CreateTableListener::to_json() {
+////    json.put("table_name", tableName);
+////
+////    boost::property_tree::ptree colsNode;
+////    for (auto col:columns) {
+////        colsNode.push_back(make_pair("", col.ptree()));
+////    }
+////    json.add_child("columns", colsNode);
+////
+////    boost::property_tree::ptree consNode;
+////    for (auto cons:constrains) {
+////        consNode.push_back(make_pair("", cons.ptree()));
+////    }
+////    json.add_child("constrains", consNode);
+////
+////    boost::property_tree::ptree optsNode;
+////    for (auto opt:options) {
+////        optsNode.put(opt.first, opt.second);
+////    }
+////    json.add_child("options", optsNode);
+////
+////    boost::property_tree::write_json(cout, json);
+////    return "";
+//}
+//
+//

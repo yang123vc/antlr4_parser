@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package MySqlParseService;
+
+service ParseService {
+    rpc ParseCreateTable (Request) returns (CreateTableResponse) {
+    }
+}
+
+message Request {
+    string query = 1;
+    uint32 server_version = 2;
+}
+
+message CreateTableResponse {
+    message Result {
+        string name = 1;
+        bool has_partition = 2;
+        string like_table = 3;
+        message Column {
+            string name = 1;
+            string type = 2;
+            repeated string attributes = 3;
+        }
+        message Constrain {
+            string name = 1;
+            string type = 2;
+            repeated string columns = 3;
+        }
+        repeated Column columns = 4;
+        repeated Constrain constrains = 5;
+        map<string, string> options = 6;
+    }
+    repeated Result results = 1;
+}
+

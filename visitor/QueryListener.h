@@ -29,8 +29,6 @@ class QueryListener : public parsers::MySQLParserBaseListener {
   protected:
     boost::property_tree::ptree json;
 
-    virtual string to_json() = 0;
-
   public:
     void exitFromClause(parsers::MySQLParser::FromClauseContext *context) override;
 
