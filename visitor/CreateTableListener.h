@@ -16,6 +16,9 @@ using namespace std;
 class CreateTableListener : public QueryListener {
     MySqlParseService::CreateTableResponse_Result result;
   public:
+    const MySqlParseService::CreateTableResponse_Result &getResult() const;
+
+  public:
     void exitCreateTable(parsers::MySQLParser::CreateTableContext *context) override;
 
     void exitTableElement(parsers::MySQLParser::TableElementContext *context) override;

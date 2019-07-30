@@ -86,6 +86,10 @@ void CreateTableListener::exitCreateTableOptions(parsers::MySQLParser::CreateTab
 //    cout << context->getText() << endl;
 }
 
+const MySqlParseService::CreateTableResponse_Result &CreateTableListener::getResult() const {
+    return result;
+}
+
 //string CreateTableListener::to_json() {
 ////    json.put("table_name", tableName);
 ////
