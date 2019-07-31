@@ -3,21 +3,12 @@
 //
 
 #include "CreateTableListener.h"
-//#include <boost/property_tree/json_parser.hpp>
-//#include <boost/property_tree/ptree.hpp>
 
 void CreateTableListener::exitCreateTable(parsers::MySQLParser::CreateTableContext *context) {
     result.set_name(context->tableName()->getText());
 
     if (context->LIKE_SYMBOL())
         result.set_like_table(context->tableRef()->getText());
-
-//    cout << result.name() << endl;
-//    to_json();
-}
-
-void CreateTableListener::exitTableElement(parsers::MySQLParser::TableElementContext *context) {
-//    cout << context->getText() << endl;
 }
 
 void CreateTableListener::exitColumnDefinition(parsers::MySQLParser::ColumnDefinitionContext *context) {
@@ -57,7 +48,6 @@ void CreateTableListener::exitTableConstraintDef(parsers::MySQLParser::TableCons
 }
 
 void CreateTableListener::exitCreateTableOption(parsers::MySQLParser::CreateTableOptionContext *context) {
-    result.mutable_options();
     string k, v;
     if (context->SECONDARY_ENGINE_SYMBOL()) {
         k = "SECONDARY_ENGINE";
@@ -81,38 +71,7 @@ void CreateTableListener::exitPartitionClause(parsers::MySQLParser::PartitionCla
     result.set_has_partition(true);
 }
 
-
-void CreateTableListener::exitCreateTableOptions(parsers::MySQLParser::CreateTableOptionsContext *context) {
-//    cout << context->getText() << endl;
+MySqlParseService::CreateTableResult &&CreateTableListener::get_result() {
+    return std::move(result);
 }
 
-const MySqlParseService::CreateTableResponse_Result &CreateTableListener::getResult() const {
-    return result;
-}
-
-//string CreateTableListener::to_json() {
-////    json.put("table_name", tableName);
-////
-////    boost::property_tree::ptree colsNode;
-////    for (auto col:columns) {
-////        colsNode.push_back(make_pair("", col.ptree()));
-////    }
-////    json.add_child("columns", colsNode);
-////
-////    boost::property_tree::ptree consNode;
-////    for (auto cons:constrains) {
-////        consNode.push_back(make_pair("", cons.ptree()));
-////    }
-////    json.add_child("constrains", consNode);
-////
-////    boost::property_tree::ptree optsNode;
-////    for (auto opt:options) {
-////        optsNode.put(opt.first, opt.second);
-////    }
-////    json.add_child("options", optsNode);
-////
-////    boost::property_tree::write_json(cout, json);
-////    return "";
-//}
-//
-//

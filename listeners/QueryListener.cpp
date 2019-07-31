@@ -3,32 +3,33 @@
 //
 #include <iostream>
 #include "QueryListener.h"
+//#include <>
 
 
-void QueryListener::exitQuery(parsers::MySQLParser::QueryContext *context) {
-//    cout << formatSignature() << endl;
-//    for (auto f:queryTables)
-//        cout << f << endl;
-}
+//void QueryListener::exitQuery(parsers::MySQLParser::QueryContext *context) {
+////    cout << formatSignature() << endl;
+////    for (auto f:queryTables)
+////        cout << f << endl;
+//}
+//
+//
+//void QueryListener::exitFromClause(parsers::MySQLParser::FromClauseContext *context) {
+//    if (context->DUAL_SYMBOL()) {
+//        queryTables.emplace_back("DUAL");
+//    }
+//}
+//
+//void QueryListener::exitTableRef(parsers::MySQLParser::TableRefContext *context) {
+//    queryTables.emplace_back(context->getText());
+//}
 
-
-void QueryListener::exitFromClause(parsers::MySQLParser::FromClauseContext *context) {
-    if (context->DUAL_SYMBOL()) {
-        queryTables.emplace_back("DUAL");
-    }
-}
-
-void QueryListener::exitTableRef(parsers::MySQLParser::TableRefContext *context) {
-    queryTables.emplace_back(context->getText());
-}
-
-void QueryListener::exitFunctionCall(parsers::MySQLParser::FunctionCallContext *context) {
-    queryFunctions.emplace_back(context->getText());
-}
-
-void QueryListener::exitRuntimeFunctionCall(parsers::MySQLParser::RuntimeFunctionCallContext *context) {
-    queryFunctions.emplace_back(context->getText());
-}
+//void QueryListener::exitFunctionCall(parsers::MySQLParser::FunctionCallContext *context) {
+//    queryFunctions.emplace_back(context->getText());
+//}
+//
+//void QueryListener::exitRuntimeFunctionCall(parsers::MySQLParser::RuntimeFunctionCallContext *context) {
+//    queryFunctions.emplace_back(context->getText());
+//}
 
 void QueryListener::visitTerminal(antlr4::tree::TerminalNode *node) {
     if (node->getSymbol()->getType() == antlr4::Token::EOF)
@@ -47,9 +48,8 @@ void QueryListener::visitTerminal(antlr4::tree::TerminalNode *node) {
     signature.emplace_back(" ");
 }
 
-string QueryListener::formatSignature() {
-    std::stringstream ss;
-
+string QueryListener::get_signature() {
+    stringstream ss;
     auto pos = find(signature.begin(), signature.end(), ".");
     if (pos != signature.end()) {
         if (pos - 1 >= signature.begin()
@@ -65,3 +65,4 @@ string QueryListener::formatSignature() {
         ss << i;
     return ss.str();
 }
+

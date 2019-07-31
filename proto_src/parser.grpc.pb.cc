@@ -19,7 +19,7 @@
 namespace MySqlParseService {
 
 static const char* ParseService_method_names[] = {
-  "/MySqlParseService.ParseService/ParseCreateTable",
+  "/MySqlParseService.ParseService/ParseQuery",
 };
 
 std::unique_ptr< ParseService::Stub> ParseService::NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options) {
@@ -29,49 +29,49 @@ std::unique_ptr< ParseService::Stub> ParseService::NewStub(const std::shared_ptr
 }
 
 ParseService::Stub::Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel)
-  : channel_(channel), rpcmethod_ParseCreateTable_(ParseService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
+  : channel_(channel), rpcmethod_ParseQuery_(ParseService_method_names[0], ::grpc::internal::RpcMethod::NORMAL_RPC, channel)
   {}
 
-::grpc::Status ParseService::Stub::ParseCreateTable(::grpc::ClientContext* context, const ::MySqlParseService::Request& request, ::MySqlParseService::CreateTableResponse* response) {
-  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ParseCreateTable_, context, request, response);
+::grpc::Status ParseService::Stub::ParseQuery(::grpc::ClientContext* context, const ::MySqlParseService::Request& request, ::MySqlParseService::Response* response) {
+  return ::grpc::internal::BlockingUnaryCall(channel_.get(), rpcmethod_ParseQuery_, context, request, response);
 }
 
-void ParseService::Stub::experimental_async::ParseCreateTable(::grpc::ClientContext* context, const ::MySqlParseService::Request* request, ::MySqlParseService::CreateTableResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ParseCreateTable_, context, request, response, std::move(f));
+void ParseService::Stub::experimental_async::ParseQuery(::grpc::ClientContext* context, const ::MySqlParseService::Request* request, ::MySqlParseService::Response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ParseQuery_, context, request, response, std::move(f));
 }
 
-void ParseService::Stub::experimental_async::ParseCreateTable(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::MySqlParseService::CreateTableResponse* response, std::function<void(::grpc::Status)> f) {
-  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ParseCreateTable_, context, request, response, std::move(f));
+void ParseService::Stub::experimental_async::ParseQuery(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::MySqlParseService::Response* response, std::function<void(::grpc::Status)> f) {
+  ::grpc_impl::internal::CallbackUnaryCall(stub_->channel_.get(), stub_->rpcmethod_ParseQuery_, context, request, response, std::move(f));
 }
 
-void ParseService::Stub::experimental_async::ParseCreateTable(::grpc::ClientContext* context, const ::MySqlParseService::Request* request, ::MySqlParseService::CreateTableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ParseCreateTable_, context, request, response, reactor);
+void ParseService::Stub::experimental_async::ParseQuery(::grpc::ClientContext* context, const ::MySqlParseService::Request* request, ::MySqlParseService::Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ParseQuery_, context, request, response, reactor);
 }
 
-void ParseService::Stub::experimental_async::ParseCreateTable(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::MySqlParseService::CreateTableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
-  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ParseCreateTable_, context, request, response, reactor);
+void ParseService::Stub::experimental_async::ParseQuery(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::MySqlParseService::Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) {
+  ::grpc_impl::internal::ClientCallbackUnaryFactory::Create(stub_->channel_.get(), stub_->rpcmethod_ParseQuery_, context, request, response, reactor);
 }
 
-::grpc::ClientAsyncResponseReader< ::MySqlParseService::CreateTableResponse>* ParseService::Stub::AsyncParseCreateTableRaw(::grpc::ClientContext* context, const ::MySqlParseService::Request& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::MySqlParseService::CreateTableResponse>::Create(channel_.get(), cq, rpcmethod_ParseCreateTable_, context, request, true);
+::grpc::ClientAsyncResponseReader< ::MySqlParseService::Response>* ParseService::Stub::AsyncParseQueryRaw(::grpc::ClientContext* context, const ::MySqlParseService::Request& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::MySqlParseService::Response>::Create(channel_.get(), cq, rpcmethod_ParseQuery_, context, request, true);
 }
 
-::grpc::ClientAsyncResponseReader< ::MySqlParseService::CreateTableResponse>* ParseService::Stub::PrepareAsyncParseCreateTableRaw(::grpc::ClientContext* context, const ::MySqlParseService::Request& request, ::grpc::CompletionQueue* cq) {
-  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::MySqlParseService::CreateTableResponse>::Create(channel_.get(), cq, rpcmethod_ParseCreateTable_, context, request, false);
+::grpc::ClientAsyncResponseReader< ::MySqlParseService::Response>* ParseService::Stub::PrepareAsyncParseQueryRaw(::grpc::ClientContext* context, const ::MySqlParseService::Request& request, ::grpc::CompletionQueue* cq) {
+  return ::grpc_impl::internal::ClientAsyncResponseReaderFactory< ::MySqlParseService::Response>::Create(channel_.get(), cq, rpcmethod_ParseQuery_, context, request, false);
 }
 
 ParseService::Service::Service() {
   AddMethod(new ::grpc::internal::RpcServiceMethod(
       ParseService_method_names[0],
       ::grpc::internal::RpcMethod::NORMAL_RPC,
-      new ::grpc::internal::RpcMethodHandler< ParseService::Service, ::MySqlParseService::Request, ::MySqlParseService::CreateTableResponse>(
-          std::mem_fn(&ParseService::Service::ParseCreateTable), this)));
+      new ::grpc::internal::RpcMethodHandler< ParseService::Service, ::MySqlParseService::Request, ::MySqlParseService::Response>(
+          std::mem_fn(&ParseService::Service::ParseQuery), this)));
 }
 
 ParseService::Service::~Service() {
 }
 
-::grpc::Status ParseService::Service::ParseCreateTable(::grpc::ServerContext* context, const ::MySqlParseService::Request* request, ::MySqlParseService::CreateTableResponse* response) {
+::grpc::Status ParseService::Service::ParseQuery(::grpc::ServerContext* context, const ::MySqlParseService::Request* request, ::MySqlParseService::Response* response) {
   (void) context;
   (void) request;
   (void) response;

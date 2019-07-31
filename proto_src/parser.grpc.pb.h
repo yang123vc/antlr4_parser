@@ -46,43 +46,43 @@ class ParseService final {
   class StubInterface {
    public:
     virtual ~StubInterface() {}
-    virtual ::grpc::Status ParseCreateTable(::grpc::ClientContext* context, const ::MySqlParseService::Request& request, ::MySqlParseService::CreateTableResponse* response) = 0;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::MySqlParseService::CreateTableResponse>> AsyncParseCreateTable(::grpc::ClientContext* context, const ::MySqlParseService::Request& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::MySqlParseService::CreateTableResponse>>(AsyncParseCreateTableRaw(context, request, cq));
+    virtual ::grpc::Status ParseQuery(::grpc::ClientContext* context, const ::MySqlParseService::Request& request, ::MySqlParseService::Response* response) = 0;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::MySqlParseService::Response>> AsyncParseQuery(::grpc::ClientContext* context, const ::MySqlParseService::Request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::MySqlParseService::Response>>(AsyncParseQueryRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::MySqlParseService::CreateTableResponse>> PrepareAsyncParseCreateTable(::grpc::ClientContext* context, const ::MySqlParseService::Request& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::MySqlParseService::CreateTableResponse>>(PrepareAsyncParseCreateTableRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::MySqlParseService::Response>> PrepareAsyncParseQuery(::grpc::ClientContext* context, const ::MySqlParseService::Request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReaderInterface< ::MySqlParseService::Response>>(PrepareAsyncParseQueryRaw(context, request, cq));
     }
     class experimental_async_interface {
      public:
       virtual ~experimental_async_interface() {}
-      virtual void ParseCreateTable(::grpc::ClientContext* context, const ::MySqlParseService::Request* request, ::MySqlParseService::CreateTableResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void ParseCreateTable(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::MySqlParseService::CreateTableResponse* response, std::function<void(::grpc::Status)>) = 0;
-      virtual void ParseCreateTable(::grpc::ClientContext* context, const ::MySqlParseService::Request* request, ::MySqlParseService::CreateTableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
-      virtual void ParseCreateTable(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::MySqlParseService::CreateTableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void ParseQuery(::grpc::ClientContext* context, const ::MySqlParseService::Request* request, ::MySqlParseService::Response* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void ParseQuery(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::MySqlParseService::Response* response, std::function<void(::grpc::Status)>) = 0;
+      virtual void ParseQuery(::grpc::ClientContext* context, const ::MySqlParseService::Request* request, ::MySqlParseService::Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
+      virtual void ParseQuery(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::MySqlParseService::Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) = 0;
     };
     virtual class experimental_async_interface* experimental_async() { return nullptr; }
   private:
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::MySqlParseService::CreateTableResponse>* AsyncParseCreateTableRaw(::grpc::ClientContext* context, const ::MySqlParseService::Request& request, ::grpc::CompletionQueue* cq) = 0;
-    virtual ::grpc::ClientAsyncResponseReaderInterface< ::MySqlParseService::CreateTableResponse>* PrepareAsyncParseCreateTableRaw(::grpc::ClientContext* context, const ::MySqlParseService::Request& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::MySqlParseService::Response>* AsyncParseQueryRaw(::grpc::ClientContext* context, const ::MySqlParseService::Request& request, ::grpc::CompletionQueue* cq) = 0;
+    virtual ::grpc::ClientAsyncResponseReaderInterface< ::MySqlParseService::Response>* PrepareAsyncParseQueryRaw(::grpc::ClientContext* context, const ::MySqlParseService::Request& request, ::grpc::CompletionQueue* cq) = 0;
   };
   class Stub final : public StubInterface {
    public:
     Stub(const std::shared_ptr< ::grpc::ChannelInterface>& channel);
-    ::grpc::Status ParseCreateTable(::grpc::ClientContext* context, const ::MySqlParseService::Request& request, ::MySqlParseService::CreateTableResponse* response) override;
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::MySqlParseService::CreateTableResponse>> AsyncParseCreateTable(::grpc::ClientContext* context, const ::MySqlParseService::Request& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::MySqlParseService::CreateTableResponse>>(AsyncParseCreateTableRaw(context, request, cq));
+    ::grpc::Status ParseQuery(::grpc::ClientContext* context, const ::MySqlParseService::Request& request, ::MySqlParseService::Response* response) override;
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::MySqlParseService::Response>> AsyncParseQuery(::grpc::ClientContext* context, const ::MySqlParseService::Request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::MySqlParseService::Response>>(AsyncParseQueryRaw(context, request, cq));
     }
-    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::MySqlParseService::CreateTableResponse>> PrepareAsyncParseCreateTable(::grpc::ClientContext* context, const ::MySqlParseService::Request& request, ::grpc::CompletionQueue* cq) {
-      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::MySqlParseService::CreateTableResponse>>(PrepareAsyncParseCreateTableRaw(context, request, cq));
+    std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::MySqlParseService::Response>> PrepareAsyncParseQuery(::grpc::ClientContext* context, const ::MySqlParseService::Request& request, ::grpc::CompletionQueue* cq) {
+      return std::unique_ptr< ::grpc::ClientAsyncResponseReader< ::MySqlParseService::Response>>(PrepareAsyncParseQueryRaw(context, request, cq));
     }
     class experimental_async final :
       public StubInterface::experimental_async_interface {
      public:
-      void ParseCreateTable(::grpc::ClientContext* context, const ::MySqlParseService::Request* request, ::MySqlParseService::CreateTableResponse* response, std::function<void(::grpc::Status)>) override;
-      void ParseCreateTable(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::MySqlParseService::CreateTableResponse* response, std::function<void(::grpc::Status)>) override;
-      void ParseCreateTable(::grpc::ClientContext* context, const ::MySqlParseService::Request* request, ::MySqlParseService::CreateTableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
-      void ParseCreateTable(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::MySqlParseService::CreateTableResponse* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void ParseQuery(::grpc::ClientContext* context, const ::MySqlParseService::Request* request, ::MySqlParseService::Response* response, std::function<void(::grpc::Status)>) override;
+      void ParseQuery(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::MySqlParseService::Response* response, std::function<void(::grpc::Status)>) override;
+      void ParseQuery(::grpc::ClientContext* context, const ::MySqlParseService::Request* request, ::MySqlParseService::Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
+      void ParseQuery(::grpc::ClientContext* context, const ::grpc::ByteBuffer* request, ::MySqlParseService::Response* response, ::grpc::experimental::ClientUnaryReactor* reactor) override;
      private:
       friend class Stub;
       explicit experimental_async(Stub* stub): stub_(stub) { }
@@ -94,9 +94,9 @@ class ParseService final {
    private:
     std::shared_ptr< ::grpc::ChannelInterface> channel_;
     class experimental_async async_stub_{this};
-    ::grpc::ClientAsyncResponseReader< ::MySqlParseService::CreateTableResponse>* AsyncParseCreateTableRaw(::grpc::ClientContext* context, const ::MySqlParseService::Request& request, ::grpc::CompletionQueue* cq) override;
-    ::grpc::ClientAsyncResponseReader< ::MySqlParseService::CreateTableResponse>* PrepareAsyncParseCreateTableRaw(::grpc::ClientContext* context, const ::MySqlParseService::Request& request, ::grpc::CompletionQueue* cq) override;
-    const ::grpc::internal::RpcMethod rpcmethod_ParseCreateTable_;
+    ::grpc::ClientAsyncResponseReader< ::MySqlParseService::Response>* AsyncParseQueryRaw(::grpc::ClientContext* context, const ::MySqlParseService::Request& request, ::grpc::CompletionQueue* cq) override;
+    ::grpc::ClientAsyncResponseReader< ::MySqlParseService::Response>* PrepareAsyncParseQueryRaw(::grpc::ClientContext* context, const ::MySqlParseService::Request& request, ::grpc::CompletionQueue* cq) override;
+    const ::grpc::internal::RpcMethod rpcmethod_ParseQuery_;
   };
   static std::unique_ptr<Stub> NewStub(const std::shared_ptr< ::grpc::ChannelInterface>& channel, const ::grpc::StubOptions& options = ::grpc::StubOptions());
 
@@ -104,146 +104,146 @@ class ParseService final {
    public:
     Service();
     virtual ~Service();
-    virtual ::grpc::Status ParseCreateTable(::grpc::ServerContext* context, const ::MySqlParseService::Request* request, ::MySqlParseService::CreateTableResponse* response);
+    virtual ::grpc::Status ParseQuery(::grpc::ServerContext* context, const ::MySqlParseService::Request* request, ::MySqlParseService::Response* response);
   };
   template <class BaseClass>
-  class WithAsyncMethod_ParseCreateTable : public BaseClass {
+  class WithAsyncMethod_ParseQuery : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithAsyncMethod_ParseCreateTable() {
+    WithAsyncMethod_ParseQuery() {
       ::grpc::Service::MarkMethodAsync(0);
     }
-    ~WithAsyncMethod_ParseCreateTable() override {
+    ~WithAsyncMethod_ParseQuery() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status ParseCreateTable(::grpc::ServerContext* context, const ::MySqlParseService::Request* request, ::MySqlParseService::CreateTableResponse* response) override {
+    ::grpc::Status ParseQuery(::grpc::ServerContext* context, const ::MySqlParseService::Request* request, ::MySqlParseService::Response* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestParseCreateTable(::grpc::ServerContext* context, ::MySqlParseService::Request* request, ::grpc::ServerAsyncResponseWriter< ::MySqlParseService::CreateTableResponse>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestParseQuery(::grpc::ServerContext* context, ::MySqlParseService::Request* request, ::grpc::ServerAsyncResponseWriter< ::MySqlParseService::Response>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
-  typedef WithAsyncMethod_ParseCreateTable<Service > AsyncService;
+  typedef WithAsyncMethod_ParseQuery<Service > AsyncService;
   template <class BaseClass>
-  class ExperimentalWithCallbackMethod_ParseCreateTable : public BaseClass {
+  class ExperimentalWithCallbackMethod_ParseQuery : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    ExperimentalWithCallbackMethod_ParseCreateTable() {
+    ExperimentalWithCallbackMethod_ParseQuery() {
       ::grpc::Service::experimental().MarkMethodCallback(0,
-        new ::grpc_impl::internal::CallbackUnaryHandler< ::MySqlParseService::Request, ::MySqlParseService::CreateTableResponse>(
+        new ::grpc_impl::internal::CallbackUnaryHandler< ::MySqlParseService::Request, ::MySqlParseService::Response>(
           [this](::grpc::ServerContext* context,
                  const ::MySqlParseService::Request* request,
-                 ::MySqlParseService::CreateTableResponse* response,
+                 ::MySqlParseService::Response* response,
                  ::grpc::experimental::ServerCallbackRpcController* controller) {
-                   return this->ParseCreateTable(context, request, response, controller);
+                   return this->ParseQuery(context, request, response, controller);
                  }));
     }
-    void SetMessageAllocatorFor_ParseCreateTable(
-        ::grpc::experimental::MessageAllocator< ::MySqlParseService::Request, ::MySqlParseService::CreateTableResponse>* allocator) {
-      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::MySqlParseService::Request, ::MySqlParseService::CreateTableResponse>*>(
+    void SetMessageAllocatorFor_ParseQuery(
+        ::grpc::experimental::MessageAllocator< ::MySqlParseService::Request, ::MySqlParseService::Response>* allocator) {
+      static_cast<::grpc_impl::internal::CallbackUnaryHandler< ::MySqlParseService::Request, ::MySqlParseService::Response>*>(
           ::grpc::Service::experimental().GetHandler(0))
               ->SetMessageAllocator(allocator);
     }
-    ~ExperimentalWithCallbackMethod_ParseCreateTable() override {
+    ~ExperimentalWithCallbackMethod_ParseQuery() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status ParseCreateTable(::grpc::ServerContext* context, const ::MySqlParseService::Request* request, ::MySqlParseService::CreateTableResponse* response) override {
+    ::grpc::Status ParseQuery(::grpc::ServerContext* context, const ::MySqlParseService::Request* request, ::MySqlParseService::Response* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual void ParseCreateTable(::grpc::ServerContext* context, const ::MySqlParseService::Request* request, ::MySqlParseService::CreateTableResponse* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+    virtual void ParseQuery(::grpc::ServerContext* context, const ::MySqlParseService::Request* request, ::MySqlParseService::Response* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
   };
-  typedef ExperimentalWithCallbackMethod_ParseCreateTable<Service > ExperimentalCallbackService;
+  typedef ExperimentalWithCallbackMethod_ParseQuery<Service > ExperimentalCallbackService;
   template <class BaseClass>
-  class WithGenericMethod_ParseCreateTable : public BaseClass {
+  class WithGenericMethod_ParseQuery : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithGenericMethod_ParseCreateTable() {
+    WithGenericMethod_ParseQuery() {
       ::grpc::Service::MarkMethodGeneric(0);
     }
-    ~WithGenericMethod_ParseCreateTable() override {
+    ~WithGenericMethod_ParseQuery() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status ParseCreateTable(::grpc::ServerContext* context, const ::MySqlParseService::Request* request, ::MySqlParseService::CreateTableResponse* response) override {
+    ::grpc::Status ParseQuery(::grpc::ServerContext* context, const ::MySqlParseService::Request* request, ::MySqlParseService::Response* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
   };
   template <class BaseClass>
-  class WithRawMethod_ParseCreateTable : public BaseClass {
+  class WithRawMethod_ParseQuery : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithRawMethod_ParseCreateTable() {
+    WithRawMethod_ParseQuery() {
       ::grpc::Service::MarkMethodRaw(0);
     }
-    ~WithRawMethod_ParseCreateTable() override {
+    ~WithRawMethod_ParseQuery() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status ParseCreateTable(::grpc::ServerContext* context, const ::MySqlParseService::Request* request, ::MySqlParseService::CreateTableResponse* response) override {
+    ::grpc::Status ParseQuery(::grpc::ServerContext* context, const ::MySqlParseService::Request* request, ::MySqlParseService::Response* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    void RequestParseCreateTable(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
+    void RequestParseQuery(::grpc::ServerContext* context, ::grpc::ByteBuffer* request, ::grpc::ServerAsyncResponseWriter< ::grpc::ByteBuffer>* response, ::grpc::CompletionQueue* new_call_cq, ::grpc::ServerCompletionQueue* notification_cq, void *tag) {
       ::grpc::Service::RequestAsyncUnary(0, context, request, response, new_call_cq, notification_cq, tag);
     }
   };
   template <class BaseClass>
-  class ExperimentalWithRawCallbackMethod_ParseCreateTable : public BaseClass {
+  class ExperimentalWithRawCallbackMethod_ParseQuery : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    ExperimentalWithRawCallbackMethod_ParseCreateTable() {
+    ExperimentalWithRawCallbackMethod_ParseQuery() {
       ::grpc::Service::experimental().MarkMethodRawCallback(0,
         new ::grpc_impl::internal::CallbackUnaryHandler< ::grpc::ByteBuffer, ::grpc::ByteBuffer>(
           [this](::grpc::ServerContext* context,
                  const ::grpc::ByteBuffer* request,
                  ::grpc::ByteBuffer* response,
                  ::grpc::experimental::ServerCallbackRpcController* controller) {
-                   this->ParseCreateTable(context, request, response, controller);
+                   this->ParseQuery(context, request, response, controller);
                  }));
     }
-    ~ExperimentalWithRawCallbackMethod_ParseCreateTable() override {
+    ~ExperimentalWithRawCallbackMethod_ParseQuery() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable synchronous version of this method
-    ::grpc::Status ParseCreateTable(::grpc::ServerContext* context, const ::MySqlParseService::Request* request, ::MySqlParseService::CreateTableResponse* response) override {
+    ::grpc::Status ParseQuery(::grpc::ServerContext* context, const ::MySqlParseService::Request* request, ::MySqlParseService::Response* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
-    virtual void ParseCreateTable(::grpc::ServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
+    virtual void ParseQuery(::grpc::ServerContext* context, const ::grpc::ByteBuffer* request, ::grpc::ByteBuffer* response, ::grpc::experimental::ServerCallbackRpcController* controller) { controller->Finish(::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "")); }
   };
   template <class BaseClass>
-  class WithStreamedUnaryMethod_ParseCreateTable : public BaseClass {
+  class WithStreamedUnaryMethod_ParseQuery : public BaseClass {
    private:
     void BaseClassMustBeDerivedFromService(const Service *service) {}
    public:
-    WithStreamedUnaryMethod_ParseCreateTable() {
+    WithStreamedUnaryMethod_ParseQuery() {
       ::grpc::Service::MarkMethodStreamed(0,
-        new ::grpc::internal::StreamedUnaryHandler< ::MySqlParseService::Request, ::MySqlParseService::CreateTableResponse>(std::bind(&WithStreamedUnaryMethod_ParseCreateTable<BaseClass>::StreamedParseCreateTable, this, std::placeholders::_1, std::placeholders::_2)));
+        new ::grpc::internal::StreamedUnaryHandler< ::MySqlParseService::Request, ::MySqlParseService::Response>(std::bind(&WithStreamedUnaryMethod_ParseQuery<BaseClass>::StreamedParseQuery, this, std::placeholders::_1, std::placeholders::_2)));
     }
-    ~WithStreamedUnaryMethod_ParseCreateTable() override {
+    ~WithStreamedUnaryMethod_ParseQuery() override {
       BaseClassMustBeDerivedFromService(this);
     }
     // disable regular version of this method
-    ::grpc::Status ParseCreateTable(::grpc::ServerContext* context, const ::MySqlParseService::Request* request, ::MySqlParseService::CreateTableResponse* response) override {
+    ::grpc::Status ParseQuery(::grpc::ServerContext* context, const ::MySqlParseService::Request* request, ::MySqlParseService::Response* response) override {
       abort();
       return ::grpc::Status(::grpc::StatusCode::UNIMPLEMENTED, "");
     }
     // replace default version of method with streamed unary
-    virtual ::grpc::Status StreamedParseCreateTable(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::MySqlParseService::Request,::MySqlParseService::CreateTableResponse>* server_unary_streamer) = 0;
+    virtual ::grpc::Status StreamedParseQuery(::grpc::ServerContext* context, ::grpc::ServerUnaryStreamer< ::MySqlParseService::Request,::MySqlParseService::Response>* server_unary_streamer) = 0;
   };
-  typedef WithStreamedUnaryMethod_ParseCreateTable<Service > StreamedUnaryService;
+  typedef WithStreamedUnaryMethod_ParseQuery<Service > StreamedUnaryService;
   typedef Service SplitStreamedService;
-  typedef WithStreamedUnaryMethod_ParseCreateTable<Service > StreamedService;
+  typedef WithStreamedUnaryMethod_ParseQuery<Service > StreamedService;
 };
 
 }  // namespace MySqlParseService

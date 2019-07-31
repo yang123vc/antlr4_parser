@@ -3,7 +3,7 @@ syntax = "proto3";
 package MySqlParseService;
 
 service ParseService {
-    rpc ParseCreateTable (Request) returns (CreateTableResponse) {
+    rpc ParseQuery (Request) returns (Response) {
     }
 }
 
@@ -12,25 +12,41 @@ message Request {
     uint32 server_version = 2;
 }
 
-message CreateTableResponse {
-    message Result {
-        string name = 1;
-        bool has_partition = 2;
-        string like_table = 3;
-        message Column {
-            string name = 1;
-            string type = 2;
-            repeated string attributes = 3;
-        }
-        message Constrain {
-            string name = 1;
-            string type = 2;
-            repeated string columns = 3;
-        }
-        repeated Column columns = 4;
-        repeated Constrain constrains = 5;
-        map<string, string> options = 6;
+message ResultWrapper {
+    oneof result {
+        CreateTableResult create_table_result = 1;
+        SelectResult select_result = 2;
     }
-    repeated Result results = 1;
 }
 
+message SelectResult {
+    repeated string from_tables = 1;
+    repeated string functions = 2;
+    string signature = 3;
+    string raw_query = 8;
+}
+
+message CreateTableResult {
+    string name = 1;
+    bool has_partition = 2;
+    string like_table = 3;
+    message Column {
+        string name = 1;
+        string type = 2;
+        repeated string attributes = 3;
+    }
+    message Constrain {
+        string name = 1;
+        string type = 2;
+        repeated string columns = 3;
+    }
+    repeated Column columns = 4;
+    repeated Constrain constrains = 5;
+    map<string, string> options = 6;
+    string signature = 7;
+    string raw_query = 8;
+}
+
+message Response {
+    repeated ResultWrapper results = 1;
+}
