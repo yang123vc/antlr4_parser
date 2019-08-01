@@ -10,6 +10,7 @@
 #include "listeners/SelectListener.hpp"
 #include "listeners/CreateTableListener.hpp"
 #include "listeners/AlterTableListener.hpp"
+#include "listeners/UpdateListener.hpp"
 
 
 grpc::Status
@@ -40,6 +41,8 @@ MySQLParseServiceImpl::ParseQuery(::grpc::ServerContext *context, const ::MySqlP
             case parsers::MySQLParser::RuleAlterStatement:
                 parse_alter(simpleStatChildCtx, response);
                 break;
+            case parsers::MySQLParser::RuleUpdateStatement:
+                parse_update(simpleStatChildCtx, response);
             default:
                 break;
         }
@@ -108,5 +111,12 @@ void MySQLParseServiceImpl::parse_alter_table(antlr4::ParserRuleContext *ctx, My
     MySqlParseService::ResultWrapper wrapper;
     auto result = do_parse<AlterTableListener, MySqlParseService::AlterTableResult>(ctx);
     wrapper.mutable_alter_table_result()->CopyFrom(result);
+    response->mutable_results()->Add(std::move(wrapper));
+}
+
+void MySQLParseServiceImpl::parse_update(antlr4::ParserRuleContext *ctx, MySqlParseService::Response *response) {
+    MySqlParseService::ResultWrapper wrapper;
+    auto result = do_parse<UpdateListener, MySqlParseService::UpdateResult>(ctx);
+    wrapper.mutable_update_result()->CopyFrom(result);
     response->mutable_results()->Add(std::move(wrapper));
 }

@@ -50,7 +50,7 @@ struct TableStruct_parser_2eproto {
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::AuxillaryParseTableField aux[]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
-  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[11]
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[12]
     PROTOBUF_SECTION_VARIABLE(protodesc_cold);
   static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
   static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
@@ -91,6 +91,9 @@ extern ResultWrapperDefaultTypeInternal _ResultWrapper_default_instance_;
 class SelectResult;
 class SelectResultDefaultTypeInternal;
 extern SelectResultDefaultTypeInternal _SelectResult_default_instance_;
+class UpdateResult;
+class UpdateResultDefaultTypeInternal;
+extern UpdateResultDefaultTypeInternal _UpdateResult_default_instance_;
 }  // namespace MySqlParseService
 PROTOBUF_NAMESPACE_OPEN
 template<> ::MySqlParseService::AlterTableResult* Arena::CreateMaybeMessage<::MySqlParseService::AlterTableResult>(Arena*);
@@ -104,6 +107,7 @@ template<> ::MySqlParseService::Request* Arena::CreateMaybeMessage<::MySqlParseS
 template<> ::MySqlParseService::Response* Arena::CreateMaybeMessage<::MySqlParseService::Response>(Arena*);
 template<> ::MySqlParseService::ResultWrapper* Arena::CreateMaybeMessage<::MySqlParseService::ResultWrapper>(Arena*);
 template<> ::MySqlParseService::SelectResult* Arena::CreateMaybeMessage<::MySqlParseService::SelectResult>(Arena*);
+template<> ::MySqlParseService::UpdateResult* Arena::CreateMaybeMessage<::MySqlParseService::UpdateResult>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace MySqlParseService {
 
@@ -288,6 +292,7 @@ class ResultWrapper :
     kCreateTableResult = 1,
     kSelectResult = 2,
     kAlterTableResult = 3,
+    kUpdateResult = 4,
     RESULT_NOT_SET = 0,
   };
 
@@ -391,6 +396,15 @@ class ResultWrapper :
   ::MySqlParseService::AlterTableResult* mutable_alter_table_result();
   void set_allocated_alter_table_result(::MySqlParseService::AlterTableResult* alter_table_result);
 
+  // .MySqlParseService.UpdateResult update_result = 4;
+  bool has_update_result() const;
+  void clear_update_result();
+  static const int kUpdateResultFieldNumber = 4;
+  const ::MySqlParseService::UpdateResult& update_result() const;
+  ::MySqlParseService::UpdateResult* release_update_result();
+  ::MySqlParseService::UpdateResult* mutable_update_result();
+  void set_allocated_update_result(::MySqlParseService::UpdateResult* update_result);
+
   void clear_result();
   ResultCase result_case() const;
   // @@protoc_insertion_point(class_scope:MySqlParseService.ResultWrapper)
@@ -399,6 +413,7 @@ class ResultWrapper :
   void set_has_create_table_result();
   void set_has_select_result();
   void set_has_alter_table_result();
+  void set_has_update_result();
 
   inline bool has_result() const;
   inline void clear_has_result();
@@ -409,6 +424,7 @@ class ResultWrapper :
     ::MySqlParseService::CreateTableResult* create_table_result_;
     ::MySqlParseService::SelectResult* select_result_;
     ::MySqlParseService::AlterTableResult* alter_table_result_;
+    ::MySqlParseService::UpdateResult* update_result_;
   } result_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   ::PROTOBUF_NAMESPACE_ID::uint32 _oneof_case_[1];
@@ -1584,6 +1600,151 @@ class AlterTableResult :
 };
 // -------------------------------------------------------------------
 
+class UpdateResult :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:MySqlParseService.UpdateResult) */ {
+ public:
+  UpdateResult();
+  virtual ~UpdateResult();
+
+  UpdateResult(const UpdateResult& from);
+  UpdateResult(UpdateResult&& from) noexcept
+    : UpdateResult() {
+    *this = ::std::move(from);
+  }
+
+  inline UpdateResult& operator=(const UpdateResult& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline UpdateResult& operator=(UpdateResult&& from) noexcept {
+    if (GetArenaNoVirtual() == from.GetArenaNoVirtual()) {
+      if (this != &from) InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return GetMetadataStatic().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return GetMetadataStatic().reflection;
+  }
+  static const UpdateResult& default_instance();
+
+  static void InitAsDefaultInstance();  // FOR INTERNAL USE ONLY
+  static inline const UpdateResult* internal_default_instance() {
+    return reinterpret_cast<const UpdateResult*>(
+               &_UpdateResult_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    10;
+
+  void Swap(UpdateResult* other);
+  friend void swap(UpdateResult& a, UpdateResult& b) {
+    a.Swap(&b);
+  }
+
+  // implements Message ----------------------------------------------
+
+  inline UpdateResult* New() const final {
+    return CreateMaybeMessage<UpdateResult>(nullptr);
+  }
+
+  UpdateResult* New(::PROTOBUF_NAMESPACE_ID::Arena* arena) const final {
+    return CreateMaybeMessage<UpdateResult>(arena);
+  }
+  void CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) final;
+  void CopyFrom(const UpdateResult& from);
+  void MergeFrom(const UpdateResult& from);
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  #if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  #else
+  bool MergePartialFromCodedStream(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) final;
+  #endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+  void SerializeWithCachedSizes(
+      ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const final;
+  ::PROTOBUF_NAMESPACE_ID::uint8* InternalSerializeWithCachedSizesToArray(
+      ::PROTOBUF_NAMESPACE_ID::uint8* target) const final;
+  int GetCachedSize() const final { return _cached_size_.Get(); }
+
+  private:
+  inline void SharedCtor();
+  inline void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(UpdateResult* other);
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "MySqlParseService.UpdateResult";
+  }
+  private:
+  inline ::PROTOBUF_NAMESPACE_ID::Arena* GetArenaNoVirtual() const {
+    return nullptr;
+  }
+  inline void* MaybeArenaPtr() const {
+    return nullptr;
+  }
+  public:
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+  private:
+  static ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadataStatic() {
+    ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&::descriptor_table_parser_2eproto);
+    return ::descriptor_table_parser_2eproto.file_level_metadata[kIndexInFileMessages];
+  }
+
+  public:
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // string raw_query = 1;
+  void clear_raw_query();
+  static const int kRawQueryFieldNumber = 1;
+  const std::string& raw_query() const;
+  void set_raw_query(const std::string& value);
+  void set_raw_query(std::string&& value);
+  void set_raw_query(const char* value);
+  void set_raw_query(const char* value, size_t size);
+  std::string* mutable_raw_query();
+  std::string* release_raw_query();
+  void set_allocated_raw_query(std::string* raw_query);
+
+  // string signature = 2;
+  void clear_signature();
+  static const int kSignatureFieldNumber = 2;
+  const std::string& signature() const;
+  void set_signature(const std::string& value);
+  void set_signature(std::string&& value);
+  void set_signature(const char* value);
+  void set_signature(const char* value, size_t size);
+  std::string* mutable_signature();
+  std::string* release_signature();
+  void set_allocated_signature(std::string* signature);
+
+  // @@protoc_insertion_point(class_scope:MySqlParseService.UpdateResult)
+ private:
+  class HasBitSetters;
+
+  ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr raw_query_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr signature_;
+  mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  friend struct ::TableStruct_parser_2eproto;
+};
+// -------------------------------------------------------------------
+
 class Response :
     public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:MySqlParseService.Response) */ {
  public:
@@ -1626,7 +1787,7 @@ class Response :
                &_Response_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
-    10;
+    11;
 
   void Swap(Response* other);
   friend void swap(Response& a, Response& b) {
@@ -1915,6 +2076,47 @@ inline ::MySqlParseService::AlterTableResult* ResultWrapper::mutable_alter_table
   }
   // @@protoc_insertion_point(field_mutable:MySqlParseService.ResultWrapper.alter_table_result)
   return result_.alter_table_result_;
+}
+
+// .MySqlParseService.UpdateResult update_result = 4;
+inline bool ResultWrapper::has_update_result() const {
+  return result_case() == kUpdateResult;
+}
+inline void ResultWrapper::set_has_update_result() {
+  _oneof_case_[0] = kUpdateResult;
+}
+inline void ResultWrapper::clear_update_result() {
+  if (has_update_result()) {
+    delete result_.update_result_;
+    clear_has_result();
+  }
+}
+inline ::MySqlParseService::UpdateResult* ResultWrapper::release_update_result() {
+  // @@protoc_insertion_point(field_release:MySqlParseService.ResultWrapper.update_result)
+  if (has_update_result()) {
+    clear_has_result();
+      ::MySqlParseService::UpdateResult* temp = result_.update_result_;
+    result_.update_result_ = nullptr;
+    return temp;
+  } else {
+    return nullptr;
+  }
+}
+inline const ::MySqlParseService::UpdateResult& ResultWrapper::update_result() const {
+  // @@protoc_insertion_point(field_get:MySqlParseService.ResultWrapper.update_result)
+  return has_update_result()
+      ? *result_.update_result_
+      : *reinterpret_cast< ::MySqlParseService::UpdateResult*>(&::MySqlParseService::_UpdateResult_default_instance_);
+}
+inline ::MySqlParseService::UpdateResult* ResultWrapper::mutable_update_result() {
+  if (!has_update_result()) {
+    clear_result();
+    set_has_update_result();
+    result_.update_result_ = CreateMaybeMessage< ::MySqlParseService::UpdateResult >(
+        GetArenaNoVirtual());
+  }
+  // @@protoc_insertion_point(field_mutable:MySqlParseService.ResultWrapper.update_result)
+  return result_.update_result_;
 }
 
 inline bool ResultWrapper::has_result() const {
@@ -3237,6 +3439,112 @@ inline void AlterTableResult::set_allocated_signature(std::string* signature) {
 
 // -------------------------------------------------------------------
 
+// UpdateResult
+
+// string raw_query = 1;
+inline void UpdateResult::clear_raw_query() {
+  raw_query_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& UpdateResult::raw_query() const {
+  // @@protoc_insertion_point(field_get:MySqlParseService.UpdateResult.raw_query)
+  return raw_query_.GetNoArena();
+}
+inline void UpdateResult::set_raw_query(const std::string& value) {
+  
+  raw_query_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:MySqlParseService.UpdateResult.raw_query)
+}
+inline void UpdateResult::set_raw_query(std::string&& value) {
+  
+  raw_query_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:MySqlParseService.UpdateResult.raw_query)
+}
+inline void UpdateResult::set_raw_query(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  raw_query_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:MySqlParseService.UpdateResult.raw_query)
+}
+inline void UpdateResult::set_raw_query(const char* value, size_t size) {
+  
+  raw_query_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:MySqlParseService.UpdateResult.raw_query)
+}
+inline std::string* UpdateResult::mutable_raw_query() {
+  
+  // @@protoc_insertion_point(field_mutable:MySqlParseService.UpdateResult.raw_query)
+  return raw_query_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* UpdateResult::release_raw_query() {
+  // @@protoc_insertion_point(field_release:MySqlParseService.UpdateResult.raw_query)
+  
+  return raw_query_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void UpdateResult::set_allocated_raw_query(std::string* raw_query) {
+  if (raw_query != nullptr) {
+    
+  } else {
+    
+  }
+  raw_query_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), raw_query);
+  // @@protoc_insertion_point(field_set_allocated:MySqlParseService.UpdateResult.raw_query)
+}
+
+// string signature = 2;
+inline void UpdateResult::clear_signature() {
+  signature_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline const std::string& UpdateResult::signature() const {
+  // @@protoc_insertion_point(field_get:MySqlParseService.UpdateResult.signature)
+  return signature_.GetNoArena();
+}
+inline void UpdateResult::set_signature(const std::string& value) {
+  
+  signature_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
+  // @@protoc_insertion_point(field_set:MySqlParseService.UpdateResult.signature)
+}
+inline void UpdateResult::set_signature(std::string&& value) {
+  
+  signature_.SetNoArena(
+    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
+  // @@protoc_insertion_point(field_set_rvalue:MySqlParseService.UpdateResult.signature)
+}
+inline void UpdateResult::set_signature(const char* value) {
+  GOOGLE_DCHECK(value != nullptr);
+  
+  signature_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
+  // @@protoc_insertion_point(field_set_char:MySqlParseService.UpdateResult.signature)
+}
+inline void UpdateResult::set_signature(const char* value, size_t size) {
+  
+  signature_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+      ::std::string(reinterpret_cast<const char*>(value), size));
+  // @@protoc_insertion_point(field_set_pointer:MySqlParseService.UpdateResult.signature)
+}
+inline std::string* UpdateResult::mutable_signature() {
+  
+  // @@protoc_insertion_point(field_mutable:MySqlParseService.UpdateResult.signature)
+  return signature_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline std::string* UpdateResult::release_signature() {
+  // @@protoc_insertion_point(field_release:MySqlParseService.UpdateResult.signature)
+  
+  return signature_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+inline void UpdateResult::set_allocated_signature(std::string* signature) {
+  if (signature != nullptr) {
+    
+  } else {
+    
+  }
+  signature_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), signature);
+  // @@protoc_insertion_point(field_set_allocated:MySqlParseService.UpdateResult.signature)
+}
+
+// -------------------------------------------------------------------
+
 // Response
 
 // repeated .MySqlParseService.ResultWrapper results = 1;
@@ -3272,6 +3580,8 @@ Response::results() const {
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------

@@ -17,6 +17,7 @@ message ResultWrapper {
         CreateTableResult create_table_result = 1;
         SelectResult select_result = 2;
         AlterTableResult alter_table_result = 3;
+        UpdateResult update_result = 4;
     }
 }
 
@@ -61,6 +62,11 @@ message AlterTableResult {
     }
     repeated Item items = 5;
     string signature = 6;
+}
+
+message UpdateResult {
+    string raw_query = 1;
+    string signature = 2;
 }
 
 message Response {

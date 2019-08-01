@@ -23,6 +23,8 @@ class MySQLParseServiceImpl final : public MySqlParseService::ParseService::Serv
 
     void parse_alter_table(antlr4::ParserRuleContext *ctx, MySqlParseService::Response *response);
 
+    void parse_update(antlr4::ParserRuleContext *ctx, MySqlParseService::Response *response);
+
     template<template<typename> class __LISTENER_TYPE, typename __RESULT_TYPE>
     __RESULT_TYPE do_parse(antlr4::ParserRuleContext *ctx);
 
