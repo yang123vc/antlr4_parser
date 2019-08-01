@@ -15,11 +15,14 @@
 #include <google/protobuf/wire_format.h>
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
+extern PROTOBUF_INTERNAL_EXPORT_parser_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_AlterTableResult_parser_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_parser_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AlterTableResult_Item_parser_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_parser_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AlterTableResult_OptionsEntry_DoNotUse_parser_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_parser_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<3> scc_info_CreateTableResult_parser_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_parser_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CreateTableResult_Column_parser_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_parser_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CreateTableResult_Constrain_parser_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_parser_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_CreateTableResult_OptionsEntry_DoNotUse_parser_2eproto;
-extern PROTOBUF_INTERNAL_EXPORT_parser_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_ResultWrapper_parser_2eproto;
+extern PROTOBUF_INTERNAL_EXPORT_parser_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<3> scc_info_ResultWrapper_parser_2eproto;
 extern PROTOBUF_INTERNAL_EXPORT_parser_2eproto ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SelectResult_parser_2eproto;
 namespace MySqlParseService {
 class RequestDefaultTypeInternal {
@@ -31,6 +34,7 @@ class ResultWrapperDefaultTypeInternal {
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<ResultWrapper> _instance;
   const ::MySqlParseService::CreateTableResult* create_table_result_;
   const ::MySqlParseService::SelectResult* select_result_;
+  const ::MySqlParseService::AlterTableResult* alter_table_result_;
 } _ResultWrapper_default_instance_;
 class SelectResultDefaultTypeInternal {
  public:
@@ -52,11 +56,66 @@ class CreateTableResultDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<CreateTableResult> _instance;
 } _CreateTableResult_default_instance_;
+class AlterTableResult_OptionsEntry_DoNotUseDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AlterTableResult_OptionsEntry_DoNotUse> _instance;
+} _AlterTableResult_OptionsEntry_DoNotUse_default_instance_;
+class AlterTableResult_ItemDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AlterTableResult_Item> _instance;
+} _AlterTableResult_Item_default_instance_;
+class AlterTableResultDefaultTypeInternal {
+ public:
+  ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<AlterTableResult> _instance;
+} _AlterTableResult_default_instance_;
 class ResponseDefaultTypeInternal {
  public:
   ::PROTOBUF_NAMESPACE_ID::internal::ExplicitlyConstructed<Response> _instance;
 } _Response_default_instance_;
 }  // namespace MySqlParseService
+static void InitDefaultsscc_info_AlterTableResult_parser_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::MySqlParseService::_AlterTableResult_default_instance_;
+    new (ptr) ::MySqlParseService::AlterTableResult();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::MySqlParseService::AlterTableResult::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_AlterTableResult_parser_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsscc_info_AlterTableResult_parser_2eproto}, {
+      &scc_info_AlterTableResult_OptionsEntry_DoNotUse_parser_2eproto.base,
+      &scc_info_AlterTableResult_Item_parser_2eproto.base,}};
+
+static void InitDefaultsscc_info_AlterTableResult_Item_parser_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::MySqlParseService::_AlterTableResult_Item_default_instance_;
+    new (ptr) ::MySqlParseService::AlterTableResult_Item();
+    ::PROTOBUF_NAMESPACE_ID::internal::OnShutdownDestroyMessage(ptr);
+  }
+  ::MySqlParseService::AlterTableResult_Item::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AlterTableResult_Item_parser_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsscc_info_AlterTableResult_Item_parser_2eproto}, {}};
+
+static void InitDefaultsscc_info_AlterTableResult_OptionsEntry_DoNotUse_parser_2eproto() {
+  GOOGLE_PROTOBUF_VERIFY_VERSION;
+
+  {
+    void* ptr = &::MySqlParseService::_AlterTableResult_OptionsEntry_DoNotUse_default_instance_;
+    new (ptr) ::MySqlParseService::AlterTableResult_OptionsEntry_DoNotUse();
+  }
+  ::MySqlParseService::AlterTableResult_OptionsEntry_DoNotUse::InitAsDefaultInstance();
+}
+
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_AlterTableResult_OptionsEntry_DoNotUse_parser_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsscc_info_AlterTableResult_OptionsEntry_DoNotUse_parser_2eproto}, {}};
+
 static void InitDefaultsscc_info_CreateTableResult_parser_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
@@ -155,10 +214,11 @@ static void InitDefaultsscc_info_ResultWrapper_parser_2eproto() {
   ::MySqlParseService::ResultWrapper::InitAsDefaultInstance();
 }
 
-::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<2> scc_info_ResultWrapper_parser_2eproto =
-    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 2, InitDefaultsscc_info_ResultWrapper_parser_2eproto}, {
+::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<3> scc_info_ResultWrapper_parser_2eproto =
+    {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 3, InitDefaultsscc_info_ResultWrapper_parser_2eproto}, {
       &scc_info_CreateTableResult_parser_2eproto.base,
-      &scc_info_SelectResult_parser_2eproto.base,}};
+      &scc_info_SelectResult_parser_2eproto.base,
+      &scc_info_AlterTableResult_parser_2eproto.base,}};
 
 static void InitDefaultsscc_info_SelectResult_parser_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
@@ -174,7 +234,7 @@ static void InitDefaultsscc_info_SelectResult_parser_2eproto() {
 ::PROTOBUF_NAMESPACE_ID::internal::SCCInfo<0> scc_info_SelectResult_parser_2eproto =
     {{ATOMIC_VAR_INIT(::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase::kUninitialized), 0, InitDefaultsscc_info_SelectResult_parser_2eproto}, {}};
 
-static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_parser_2eproto[8];
+static ::PROTOBUF_NAMESPACE_ID::Metadata file_level_metadata_parser_2eproto[11];
 static constexpr ::PROTOBUF_NAMESPACE_ID::EnumDescriptor const** file_level_enum_descriptors_parser_2eproto = nullptr;
 static constexpr ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor const** file_level_service_descriptors_parser_2eproto = nullptr;
 
@@ -193,6 +253,7 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_parser_2eproto::offsets[] PROT
   ~0u,  // no _weak_field_map_
   offsetof(::MySqlParseService::ResultWrapperDefaultTypeInternal, create_table_result_),
   offsetof(::MySqlParseService::ResultWrapperDefaultTypeInternal, select_result_),
+  offsetof(::MySqlParseService::ResultWrapperDefaultTypeInternal, alter_table_result_),
   PROTOBUF_FIELD_OFFSET(::MySqlParseService::ResultWrapper, result_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::MySqlParseService::SelectResult, _internal_metadata_),
@@ -241,6 +302,35 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_parser_2eproto::offsets[] PROT
   PROTOBUF_FIELD_OFFSET(::MySqlParseService::CreateTableResult, options_),
   PROTOBUF_FIELD_OFFSET(::MySqlParseService::CreateTableResult, signature_),
   PROTOBUF_FIELD_OFFSET(::MySqlParseService::CreateTableResult, raw_query_),
+  PROTOBUF_FIELD_OFFSET(::MySqlParseService::AlterTableResult_OptionsEntry_DoNotUse, _has_bits_),
+  PROTOBUF_FIELD_OFFSET(::MySqlParseService::AlterTableResult_OptionsEntry_DoNotUse, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::MySqlParseService::AlterTableResult_OptionsEntry_DoNotUse, key_),
+  PROTOBUF_FIELD_OFFSET(::MySqlParseService::AlterTableResult_OptionsEntry_DoNotUse, value_),
+  0,
+  1,
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::MySqlParseService::AlterTableResult_Item, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::MySqlParseService::AlterTableResult_Item, action_),
+  PROTOBUF_FIELD_OFFSET(::MySqlParseService::AlterTableResult_Item, type_),
+  PROTOBUF_FIELD_OFFSET(::MySqlParseService::AlterTableResult_Item, name_),
+  PROTOBUF_FIELD_OFFSET(::MySqlParseService::AlterTableResult_Item, detail_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::MySqlParseService::AlterTableResult, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  PROTOBUF_FIELD_OFFSET(::MySqlParseService::AlterTableResult, name_),
+  PROTOBUF_FIELD_OFFSET(::MySqlParseService::AlterTableResult, raw_query_),
+  PROTOBUF_FIELD_OFFSET(::MySqlParseService::AlterTableResult, modify_partition_),
+  PROTOBUF_FIELD_OFFSET(::MySqlParseService::AlterTableResult, options_),
+  PROTOBUF_FIELD_OFFSET(::MySqlParseService::AlterTableResult, items_),
+  PROTOBUF_FIELD_OFFSET(::MySqlParseService::AlterTableResult, signature_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::MySqlParseService::Response, _internal_metadata_),
   ~0u,  // no _extensions_
@@ -251,12 +341,15 @@ const ::PROTOBUF_NAMESPACE_ID::uint32 TableStruct_parser_2eproto::offsets[] PROT
 static const ::PROTOBUF_NAMESPACE_ID::internal::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, sizeof(::MySqlParseService::Request)},
   { 7, -1, sizeof(::MySqlParseService::ResultWrapper)},
-  { 15, -1, sizeof(::MySqlParseService::SelectResult)},
-  { 24, -1, sizeof(::MySqlParseService::CreateTableResult_Column)},
-  { 32, -1, sizeof(::MySqlParseService::CreateTableResult_Constrain)},
-  { 40, 47, sizeof(::MySqlParseService::CreateTableResult_OptionsEntry_DoNotUse)},
-  { 49, -1, sizeof(::MySqlParseService::CreateTableResult)},
-  { 62, -1, sizeof(::MySqlParseService::Response)},
+  { 16, -1, sizeof(::MySqlParseService::SelectResult)},
+  { 25, -1, sizeof(::MySqlParseService::CreateTableResult_Column)},
+  { 33, -1, sizeof(::MySqlParseService::CreateTableResult_Constrain)},
+  { 41, 48, sizeof(::MySqlParseService::CreateTableResult_OptionsEntry_DoNotUse)},
+  { 50, -1, sizeof(::MySqlParseService::CreateTableResult)},
+  { 63, 70, sizeof(::MySqlParseService::AlterTableResult_OptionsEntry_DoNotUse)},
+  { 72, -1, sizeof(::MySqlParseService::AlterTableResult_Item)},
+  { 81, -1, sizeof(::MySqlParseService::AlterTableResult)},
+  { 92, -1, sizeof(::MySqlParseService::Response)},
 };
 
 static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] = {
@@ -267,39 +360,55 @@ static ::PROTOBUF_NAMESPACE_ID::Message const * const file_default_instances[] =
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::MySqlParseService::_CreateTableResult_Constrain_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::MySqlParseService::_CreateTableResult_OptionsEntry_DoNotUse_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::MySqlParseService::_CreateTableResult_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::MySqlParseService::_AlterTableResult_OptionsEntry_DoNotUse_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::MySqlParseService::_AlterTableResult_Item_default_instance_),
+  reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::MySqlParseService::_AlterTableResult_default_instance_),
   reinterpret_cast<const ::PROTOBUF_NAMESPACE_ID::Message*>(&::MySqlParseService::_Response_default_instance_),
 };
 
 const char descriptor_table_protodef_parser_2eproto[] =
   "\n\014parser.proto\022\021MySqlParseService\"0\n\007Req"
   "uest\022\r\n\005query\030\001 \001(\t\022\026\n\016server_version\030\002 "
-  "\001(\r\"\230\001\n\rResultWrapper\022C\n\023create_table_re"
+  "\001(\r\"\333\001\n\rResultWrapper\022C\n\023create_table_re"
   "sult\030\001 \001(\0132$.MySqlParseService.CreateTab"
   "leResultH\000\0228\n\rselect_result\030\002 \001(\0132\037.MySq"
-  "lParseService.SelectResultH\000B\010\n\006result\"\\"
-  "\n\014SelectResult\022\023\n\013from_tables\030\001 \003(\t\022\021\n\tf"
-  "unctions\030\002 \003(\t\022\021\n\tsignature\030\003 \001(\t\022\021\n\traw"
-  "_query\030\010 \001(\t\"\334\003\n\021CreateTableResult\022\014\n\004na"
-  "me\030\001 \001(\t\022\025\n\rhas_partition\030\002 \001(\010\022\022\n\nlike_"
-  "table\030\003 \001(\t\022<\n\007columns\030\004 \003(\0132+.MySqlPars"
-  "eService.CreateTableResult.Column\022B\n\ncon"
-  "strains\030\005 \003(\0132..MySqlParseService.Create"
-  "TableResult.Constrain\022B\n\007options\030\006 \003(\01321"
-  ".MySqlParseService.CreateTableResult.Opt"
-  "ionsEntry\022\021\n\tsignature\030\007 \001(\t\022\021\n\traw_quer"
-  "y\030\010 \001(\t\0328\n\006Column\022\014\n\004name\030\001 \001(\t\022\014\n\004type\030"
-  "\002 \001(\t\022\022\n\nattributes\030\003 \003(\t\0328\n\tConstrain\022\014"
-  "\n\004name\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\022\017\n\007columns\030\003 "
-  "\003(\t\032.\n\014OptionsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu"
-  "e\030\002 \001(\t:\0028\001\"=\n\010Response\0221\n\007results\030\001 \003(\013"
-  "2 .MySqlParseService.ResultWrapper2W\n\014Pa"
-  "rseService\022G\n\nParseQuery\022\032.MySqlParseSer"
-  "vice.Request\032\033.MySqlParseService.Respons"
-  "e\"\000b\006proto3"
+  "lParseService.SelectResultH\000\022A\n\022alter_ta"
+  "ble_result\030\003 \001(\0132#.MySqlParseService.Alt"
+  "erTableResultH\000B\010\n\006result\"\\\n\014SelectResul"
+  "t\022\023\n\013from_tables\030\001 \003(\t\022\021\n\tfunctions\030\002 \003("
+  "\t\022\021\n\tsignature\030\003 \001(\t\022\021\n\traw_query\030\010 \001(\t\""
+  "\334\003\n\021CreateTableResult\022\014\n\004name\030\001 \001(\t\022\025\n\rh"
+  "as_partition\030\002 \001(\010\022\022\n\nlike_table\030\003 \001(\t\022<"
+  "\n\007columns\030\004 \003(\0132+.MySqlParseService.Crea"
+  "teTableResult.Column\022B\n\nconstrains\030\005 \003(\013"
+  "2..MySqlParseService.CreateTableResult.C"
+  "onstrain\022B\n\007options\030\006 \003(\01321.MySqlParseSe"
+  "rvice.CreateTableResult.OptionsEntry\022\021\n\t"
+  "signature\030\007 \001(\t\022\021\n\traw_query\030\010 \001(\t\0328\n\006Co"
+  "lumn\022\014\n\004name\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\022\022\n\nattr"
+  "ibutes\030\003 \003(\t\0328\n\tConstrain\022\014\n\004name\030\001 \001(\t\022"
+  "\014\n\004type\030\002 \001(\t\022\017\n\007columns\030\003 \003(\t\032.\n\014Option"
+  "sEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\320"
+  "\002\n\020AlterTableResult\022\014\n\004name\030\001 \001(\t\022\021\n\traw"
+  "_query\030\002 \001(\t\022\030\n\020modify_partition\030\003 \001(\010\022A"
+  "\n\007options\030\004 \003(\01320.MySqlParseService.Alte"
+  "rTableResult.OptionsEntry\0227\n\005items\030\005 \003(\013"
+  "2(.MySqlParseService.AlterTableResult.It"
+  "em\022\021\n\tsignature\030\006 \001(\t\032.\n\014OptionsEntry\022\013\n"
+  "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032B\n\004Item\022\016\n"
+  "\006action\030\001 \001(\t\022\014\n\004type\030\002 \001(\t\022\014\n\004name\030\003 \001("
+  "\t\022\016\n\006detail\030\004 \001(\t\"=\n\010Response\0221\n\007results"
+  "\030\001 \003(\0132 .MySqlParseService.ResultWrapper"
+  "2W\n\014ParseService\022G\n\nParseQuery\022\032.MySqlPa"
+  "rseService.Request\032\033.MySqlParseService.R"
+  "esponse\"\000b\006proto3"
   ;
 static const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable*const descriptor_table_parser_2eproto_deps[1] = {
 };
-static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_parser_2eproto_sccs[8] = {
+static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_parser_2eproto_sccs[11] = {
+  &scc_info_AlterTableResult_parser_2eproto.base,
+  &scc_info_AlterTableResult_Item_parser_2eproto.base,
+  &scc_info_AlterTableResult_OptionsEntry_DoNotUse_parser_2eproto.base,
   &scc_info_CreateTableResult_parser_2eproto.base,
   &scc_info_CreateTableResult_Column_parser_2eproto.base,
   &scc_info_CreateTableResult_Constrain_parser_2eproto.base,
@@ -312,10 +421,10 @@ static ::PROTOBUF_NAMESPACE_ID::internal::SCCInfoBase*const descriptor_table_par
 static ::PROTOBUF_NAMESPACE_ID::internal::once_flag descriptor_table_parser_2eproto_once;
 static bool descriptor_table_parser_2eproto_initialized = false;
 const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_parser_2eproto = {
-  &descriptor_table_parser_2eproto_initialized, descriptor_table_protodef_parser_2eproto, "parser.proto", 971,
-  &descriptor_table_parser_2eproto_once, descriptor_table_parser_2eproto_sccs, descriptor_table_parser_2eproto_deps, 8, 0,
+  &descriptor_table_parser_2eproto_initialized, descriptor_table_protodef_parser_2eproto, "parser.proto", 1377,
+  &descriptor_table_parser_2eproto_once, descriptor_table_parser_2eproto_sccs, descriptor_table_parser_2eproto_deps, 11, 0,
   schemas, file_default_instances, TableStruct_parser_2eproto::offsets,
-  file_level_metadata_parser_2eproto, 8, file_level_enum_descriptors_parser_2eproto, file_level_service_descriptors_parser_2eproto,
+  file_level_metadata_parser_2eproto, 11, file_level_enum_descriptors_parser_2eproto, file_level_service_descriptors_parser_2eproto,
 };
 
 // Force running AddDescriptors() at dynamic initialization time.
@@ -651,11 +760,14 @@ void ResultWrapper::InitAsDefaultInstance() {
       ::MySqlParseService::CreateTableResult::internal_default_instance());
   ::MySqlParseService::_ResultWrapper_default_instance_.select_result_ = const_cast< ::MySqlParseService::SelectResult*>(
       ::MySqlParseService::SelectResult::internal_default_instance());
+  ::MySqlParseService::_ResultWrapper_default_instance_.alter_table_result_ = const_cast< ::MySqlParseService::AlterTableResult*>(
+      ::MySqlParseService::AlterTableResult::internal_default_instance());
 }
 class ResultWrapper::HasBitSetters {
  public:
   static const ::MySqlParseService::CreateTableResult& create_table_result(const ResultWrapper* msg);
   static const ::MySqlParseService::SelectResult& select_result(const ResultWrapper* msg);
+  static const ::MySqlParseService::AlterTableResult& alter_table_result(const ResultWrapper* msg);
 };
 
 const ::MySqlParseService::CreateTableResult&
@@ -665,6 +777,10 @@ ResultWrapper::HasBitSetters::create_table_result(const ResultWrapper* msg) {
 const ::MySqlParseService::SelectResult&
 ResultWrapper::HasBitSetters::select_result(const ResultWrapper* msg) {
   return *msg->result_.select_result_;
+}
+const ::MySqlParseService::AlterTableResult&
+ResultWrapper::HasBitSetters::alter_table_result(const ResultWrapper* msg) {
+  return *msg->result_.alter_table_result_;
 }
 void ResultWrapper::set_allocated_create_table_result(::MySqlParseService::CreateTableResult* create_table_result) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
@@ -694,9 +810,24 @@ void ResultWrapper::set_allocated_select_result(::MySqlParseService::SelectResul
   }
   // @@protoc_insertion_point(field_set_allocated:MySqlParseService.ResultWrapper.select_result)
 }
+void ResultWrapper::set_allocated_alter_table_result(::MySqlParseService::AlterTableResult* alter_table_result) {
+  ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaNoVirtual();
+  clear_result();
+  if (alter_table_result) {
+    ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena = nullptr;
+    if (message_arena != submessage_arena) {
+      alter_table_result = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, alter_table_result, submessage_arena);
+    }
+    set_has_alter_table_result();
+    result_.alter_table_result_ = alter_table_result;
+  }
+  // @@protoc_insertion_point(field_set_allocated:MySqlParseService.ResultWrapper.alter_table_result)
+}
 #if !defined(_MSC_VER) || _MSC_VER >= 1900
 const int ResultWrapper::kCreateTableResultFieldNumber;
 const int ResultWrapper::kSelectResultFieldNumber;
+const int ResultWrapper::kAlterTableResultFieldNumber;
 #endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
 
 ResultWrapper::ResultWrapper()
@@ -716,6 +847,10 @@ ResultWrapper::ResultWrapper(const ResultWrapper& from)
     }
     case kSelectResult: {
       mutable_select_result()->::MySqlParseService::SelectResult::MergeFrom(from.select_result());
+      break;
+    }
+    case kAlterTableResult: {
+      mutable_alter_table_result()->::MySqlParseService::AlterTableResult::MergeFrom(from.alter_table_result());
       break;
     }
     case RESULT_NOT_SET: {
@@ -761,6 +896,10 @@ void ResultWrapper::clear_result() {
       delete result_.select_result_;
       break;
     }
+    case kAlterTableResult: {
+      delete result_.alter_table_result_;
+      break;
+    }
     case RESULT_NOT_SET: {
       break;
     }
@@ -798,6 +937,13 @@ const char* ResultWrapper::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
           ptr = ctx->ParseMessage(mutable_select_result(), ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // .MySqlParseService.AlterTableResult alter_table_result = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          ptr = ctx->ParseMessage(mutable_alter_table_result(), ptr);
           CHK_(ptr);
         } else goto handle_unusual;
         continue;
@@ -853,6 +999,17 @@ bool ResultWrapper::MergePartialFromCodedStream(
         break;
       }
 
+      // .MySqlParseService.AlterTableResult alter_table_result = 3;
+      case 3: {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (26 & 0xFF)) {
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessage(
+               input, mutable_alter_table_result()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
       default: {
       handle_unusual:
         if (tag == 0) {
@@ -892,6 +1049,12 @@ void ResultWrapper::SerializeWithCachedSizes(
       2, HasBitSetters::select_result(this), output);
   }
 
+  // .MySqlParseService.AlterTableResult alter_table_result = 3;
+  if (has_alter_table_result()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(
+      3, HasBitSetters::alter_table_result(this), output);
+  }
+
   if (_internal_metadata_.have_unknown_fields()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
         _internal_metadata_.unknown_fields(), output);
@@ -917,6 +1080,13 @@ void ResultWrapper::SerializeWithCachedSizes(
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessageToArray(
         2, HasBitSetters::select_result(this), target);
+  }
+
+  // .MySqlParseService.AlterTableResult alter_table_result = 3;
+  if (has_alter_table_result()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        3, HasBitSetters::alter_table_result(this), target);
   }
 
   if (_internal_metadata_.have_unknown_fields()) {
@@ -953,6 +1123,13 @@ size_t ResultWrapper::ByteSizeLong() const {
       total_size += 1 +
         ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
           *result_.select_result_);
+      break;
+    }
+    // .MySqlParseService.AlterTableResult alter_table_result = 3;
+    case kAlterTableResult: {
+      total_size += 1 +
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          *result_.alter_table_result_);
       break;
     }
     case RESULT_NOT_SET: {
@@ -993,6 +1170,10 @@ void ResultWrapper::MergeFrom(const ResultWrapper& from) {
     }
     case kSelectResult: {
       mutable_select_result()->::MySqlParseService::SelectResult::MergeFrom(from.select_result());
+      break;
+    }
+    case kAlterTableResult: {
+      mutable_alter_table_result()->::MySqlParseService::AlterTableResult::MergeFrom(from.alter_table_result());
       break;
     }
     case RESULT_NOT_SET: {
@@ -3093,6 +3274,1144 @@ void CreateTableResult::InternalSwap(CreateTableResult* other) {
 
 // ===================================================================
 
+AlterTableResult_OptionsEntry_DoNotUse::AlterTableResult_OptionsEntry_DoNotUse() {}
+AlterTableResult_OptionsEntry_DoNotUse::AlterTableResult_OptionsEntry_DoNotUse(::PROTOBUF_NAMESPACE_ID::Arena* arena)
+    : SuperType(arena) {}
+void AlterTableResult_OptionsEntry_DoNotUse::MergeFrom(const AlterTableResult_OptionsEntry_DoNotUse& other) {
+  MergeFromInternal(other);
+}
+::PROTOBUF_NAMESPACE_ID::Metadata AlterTableResult_OptionsEntry_DoNotUse::GetMetadata() const {
+  return GetMetadataStatic();
+}
+void AlterTableResult_OptionsEntry_DoNotUse::MergeFrom(
+    const ::PROTOBUF_NAMESPACE_ID::Message& other) {
+  ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom(other);
+}
+
+
+// ===================================================================
+
+void AlterTableResult_Item::InitAsDefaultInstance() {
+}
+class AlterTableResult_Item::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int AlterTableResult_Item::kActionFieldNumber;
+const int AlterTableResult_Item::kTypeFieldNumber;
+const int AlterTableResult_Item::kNameFieldNumber;
+const int AlterTableResult_Item::kDetailFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+AlterTableResult_Item::AlterTableResult_Item()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:MySqlParseService.AlterTableResult.Item)
+}
+AlterTableResult_Item::AlterTableResult_Item(const AlterTableResult_Item& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  action_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (from.action().size() > 0) {
+    action_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.action_);
+  }
+  type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (from.type().size() > 0) {
+    type_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.type_);
+  }
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (from.name().size() > 0) {
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
+  detail_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (from.detail().size() > 0) {
+    detail_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.detail_);
+  }
+  // @@protoc_insertion_point(copy_constructor:MySqlParseService.AlterTableResult.Item)
+}
+
+void AlterTableResult_Item::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_AlterTableResult_Item_parser_2eproto.base);
+  action_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  type_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  detail_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+AlterTableResult_Item::~AlterTableResult_Item() {
+  // @@protoc_insertion_point(destructor:MySqlParseService.AlterTableResult.Item)
+  SharedDtor();
+}
+
+void AlterTableResult_Item::SharedDtor() {
+  action_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  type_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  detail_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void AlterTableResult_Item::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const AlterTableResult_Item& AlterTableResult_Item::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AlterTableResult_Item_parser_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void AlterTableResult_Item::Clear() {
+// @@protoc_insertion_point(message_clear_start:MySqlParseService.AlterTableResult.Item)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  action_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  type_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  detail_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* AlterTableResult_Item::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string action = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(mutable_action(), ptr, ctx, "MySqlParseService.AlterTableResult.Item.action");
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string type = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(mutable_type(), ptr, ctx, "MySqlParseService.AlterTableResult.Item.type");
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string name = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 26)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(mutable_name(), ptr, ctx, "MySqlParseService.AlterTableResult.Item.name");
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string detail = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(mutable_detail(), ptr, ctx, "MySqlParseService.AlterTableResult.Item.detail");
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool AlterTableResult_Item::MergePartialFromCodedStream(
+    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+  // @@protoc_insertion_point(parse_start:MySqlParseService.AlterTableResult.Item)
+  for (;;) {
+    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string action = 1;
+      case 1: {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
+                input, this->mutable_action()));
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+            this->action().data(), static_cast<int>(this->action().length()),
+            ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
+            "MySqlParseService.AlterTableResult.Item.action"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string type = 2;
+      case 2: {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (18 & 0xFF)) {
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
+                input, this->mutable_type()));
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+            this->type().data(), static_cast<int>(this->type().length()),
+            ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
+            "MySqlParseService.AlterTableResult.Item.type"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string name = 3;
+      case 3: {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (26 & 0xFF)) {
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
+                input, this->mutable_name()));
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+            this->name().data(), static_cast<int>(this->name().length()),
+            ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
+            "MySqlParseService.AlterTableResult.Item.name"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string detail = 4;
+      case 4: {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (34 & 0xFF)) {
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
+                input, this->mutable_detail()));
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+            this->detail().data(), static_cast<int>(this->detail().length()),
+            ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
+            "MySqlParseService.AlterTableResult.Item.detail"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:MySqlParseService.AlterTableResult.Item)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:MySqlParseService.AlterTableResult.Item)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void AlterTableResult_Item::SerializeWithCachedSizes(
+    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:MySqlParseService.AlterTableResult.Item)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string action = 1;
+  if (this->action().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->action().data(), static_cast<int>(this->action().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "MySqlParseService.AlterTableResult.Item.action");
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->action(), output);
+  }
+
+  // string type = 2;
+  if (this->type().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->type().data(), static_cast<int>(this->type().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "MySqlParseService.AlterTableResult.Item.type");
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->type(), output);
+  }
+
+  // string name = 3;
+  if (this->name().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->name().data(), static_cast<int>(this->name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "MySqlParseService.AlterTableResult.Item.name");
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringMaybeAliased(
+      3, this->name(), output);
+  }
+
+  // string detail = 4;
+  if (this->detail().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->detail().data(), static_cast<int>(this->detail().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "MySqlParseService.AlterTableResult.Item.detail");
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringMaybeAliased(
+      4, this->detail(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:MySqlParseService.AlterTableResult.Item)
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* AlterTableResult_Item::InternalSerializeWithCachedSizesToArray(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:MySqlParseService.AlterTableResult.Item)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string action = 1;
+  if (this->action().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->action().data(), static_cast<int>(this->action().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "MySqlParseService.AlterTableResult.Item.action");
+    target =
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
+        1, this->action(), target);
+  }
+
+  // string type = 2;
+  if (this->type().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->type().data(), static_cast<int>(this->type().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "MySqlParseService.AlterTableResult.Item.type");
+    target =
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
+        2, this->type(), target);
+  }
+
+  // string name = 3;
+  if (this->name().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->name().data(), static_cast<int>(this->name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "MySqlParseService.AlterTableResult.Item.name");
+    target =
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
+        3, this->name(), target);
+  }
+
+  // string detail = 4;
+  if (this->detail().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->detail().data(), static_cast<int>(this->detail().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "MySqlParseService.AlterTableResult.Item.detail");
+    target =
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
+        4, this->detail(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:MySqlParseService.AlterTableResult.Item)
+  return target;
+}
+
+size_t AlterTableResult_Item::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:MySqlParseService.AlterTableResult.Item)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string action = 1;
+  if (this->action().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->action());
+  }
+
+  // string type = 2;
+  if (this->type().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->type());
+  }
+
+  // string name = 3;
+  if (this->name().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->name());
+  }
+
+  // string detail = 4;
+  if (this->detail().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->detail());
+  }
+
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void AlterTableResult_Item::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:MySqlParseService.AlterTableResult.Item)
+  GOOGLE_DCHECK_NE(&from, this);
+  const AlterTableResult_Item* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AlterTableResult_Item>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:MySqlParseService.AlterTableResult.Item)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:MySqlParseService.AlterTableResult.Item)
+    MergeFrom(*source);
+  }
+}
+
+void AlterTableResult_Item::MergeFrom(const AlterTableResult_Item& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:MySqlParseService.AlterTableResult.Item)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from.action().size() > 0) {
+
+    action_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.action_);
+  }
+  if (from.type().size() > 0) {
+
+    type_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.type_);
+  }
+  if (from.name().size() > 0) {
+
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
+  if (from.detail().size() > 0) {
+
+    detail_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.detail_);
+  }
+}
+
+void AlterTableResult_Item::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:MySqlParseService.AlterTableResult.Item)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void AlterTableResult_Item::CopyFrom(const AlterTableResult_Item& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:MySqlParseService.AlterTableResult.Item)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AlterTableResult_Item::IsInitialized() const {
+  return true;
+}
+
+void AlterTableResult_Item::Swap(AlterTableResult_Item* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void AlterTableResult_Item::InternalSwap(AlterTableResult_Item* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  action_.Swap(&other->action_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  type_.Swap(&other->type_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  detail_.Swap(&other->detail_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata AlterTableResult_Item::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
+void AlterTableResult::InitAsDefaultInstance() {
+}
+class AlterTableResult::HasBitSetters {
+ public:
+};
+
+#if !defined(_MSC_VER) || _MSC_VER >= 1900
+const int AlterTableResult::kNameFieldNumber;
+const int AlterTableResult::kRawQueryFieldNumber;
+const int AlterTableResult::kModifyPartitionFieldNumber;
+const int AlterTableResult::kOptionsFieldNumber;
+const int AlterTableResult::kItemsFieldNumber;
+const int AlterTableResult::kSignatureFieldNumber;
+#endif  // !defined(_MSC_VER) || _MSC_VER >= 1900
+
+AlterTableResult::AlterTableResult()
+  : ::PROTOBUF_NAMESPACE_ID::Message(), _internal_metadata_(nullptr) {
+  SharedCtor();
+  // @@protoc_insertion_point(constructor:MySqlParseService.AlterTableResult)
+}
+AlterTableResult::AlterTableResult(const AlterTableResult& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message(),
+      _internal_metadata_(nullptr),
+      items_(from.items_) {
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  options_.MergeFrom(from.options_);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (from.name().size() > 0) {
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
+  raw_query_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (from.raw_query().size() > 0) {
+    raw_query_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.raw_query_);
+  }
+  signature_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  if (from.signature().size() > 0) {
+    signature_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.signature_);
+  }
+  modify_partition_ = from.modify_partition_;
+  // @@protoc_insertion_point(copy_constructor:MySqlParseService.AlterTableResult)
+}
+
+void AlterTableResult::SharedCtor() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&scc_info_AlterTableResult_parser_2eproto.base);
+  name_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  raw_query_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  signature_.UnsafeSetDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  modify_partition_ = false;
+}
+
+AlterTableResult::~AlterTableResult() {
+  // @@protoc_insertion_point(destructor:MySqlParseService.AlterTableResult)
+  SharedDtor();
+}
+
+void AlterTableResult::SharedDtor() {
+  name_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  raw_query_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  signature_.DestroyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+}
+
+void AlterTableResult::SetCachedSize(int size) const {
+  _cached_size_.Set(size);
+}
+const AlterTableResult& AlterTableResult::default_instance() {
+  ::PROTOBUF_NAMESPACE_ID::internal::InitSCC(&::scc_info_AlterTableResult_parser_2eproto.base);
+  return *internal_default_instance();
+}
+
+
+void AlterTableResult::Clear() {
+// @@protoc_insertion_point(message_clear_start:MySqlParseService.AlterTableResult)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  options_.Clear();
+  items_.Clear();
+  name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  raw_query_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  signature_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
+  modify_partition_ = false;
+  _internal_metadata_.Clear();
+}
+
+#if GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+const char* AlterTableResult::_InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+    ptr = ::PROTOBUF_NAMESPACE_ID::internal::ReadTag(ptr, &tag);
+    CHK_(ptr);
+    switch (tag >> 3) {
+      // string name = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 10)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(mutable_name(), ptr, ctx, "MySqlParseService.AlterTableResult.name");
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // string raw_query = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 18)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(mutable_raw_query(), ptr, ctx, "MySqlParseService.AlterTableResult.raw_query");
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // bool modify_partition = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 24)) {
+          modify_partition_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint(&ptr);
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      // map<string, string> options = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 34)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(&options_, ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<::PROTOBUF_NAMESPACE_ID::uint8>(ptr) == 34);
+        } else goto handle_unusual;
+        continue;
+      // repeated .MySqlParseService.AlterTableResult.Item items = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 42)) {
+          ptr -= 1;
+          do {
+            ptr += 1;
+            ptr = ctx->ParseMessage(add_items(), ptr);
+            CHK_(ptr);
+            if (!ctx->DataAvailable(ptr)) break;
+          } while (::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<::PROTOBUF_NAMESPACE_ID::uint8>(ptr) == 42);
+        } else goto handle_unusual;
+        continue;
+      // string signature = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<::PROTOBUF_NAMESPACE_ID::uint8>(tag) == 50)) {
+          ptr = ::PROTOBUF_NAMESPACE_ID::internal::InlineGreedyStringParserUTF8(mutable_signature(), ptr, ctx, "MySqlParseService.AlterTableResult.signature");
+          CHK_(ptr);
+        } else goto handle_unusual;
+        continue;
+      default: {
+      handle_unusual:
+        if ((tag & 7) == 4 || tag == 0) {
+          ctx->SetLastTag(tag);
+          goto success;
+        }
+        ptr = UnknownFieldParse(tag, &_internal_metadata_, ptr, ctx);
+        CHK_(ptr != nullptr);
+        continue;
+      }
+    }  // switch
+  }  // while
+success:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto success;
+#undef CHK_
+}
+#else  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+bool AlterTableResult::MergePartialFromCodedStream(
+    ::PROTOBUF_NAMESPACE_ID::io::CodedInputStream* input) {
+#define DO_(EXPRESSION) if (!PROTOBUF_PREDICT_TRUE(EXPRESSION)) goto failure
+  ::PROTOBUF_NAMESPACE_ID::uint32 tag;
+  // @@protoc_insertion_point(parse_start:MySqlParseService.AlterTableResult)
+  for (;;) {
+    ::std::pair<::PROTOBUF_NAMESPACE_ID::uint32, bool> p = input->ReadTagWithCutoffNoLastTag(127u);
+    tag = p.first;
+    if (!p.second) goto handle_unusual;
+    switch (::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::GetTagFieldNumber(tag)) {
+      // string name = 1;
+      case 1: {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (10 & 0xFF)) {
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
+                input, this->mutable_name()));
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+            this->name().data(), static_cast<int>(this->name().length()),
+            ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
+            "MySqlParseService.AlterTableResult.name"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string raw_query = 2;
+      case 2: {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (18 & 0xFF)) {
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
+                input, this->mutable_raw_query()));
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+            this->raw_query().data(), static_cast<int>(this->raw_query().length()),
+            ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
+            "MySqlParseService.AlterTableResult.raw_query"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // bool modify_partition = 3;
+      case 3: {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (24 & 0xFF)) {
+
+          DO_((::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &modify_partition_)));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // map<string, string> options = 4;
+      case 4: {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (34 & 0xFF)) {
+          AlterTableResult_OptionsEntry_DoNotUse::Parser< ::PROTOBUF_NAMESPACE_ID::internal::MapField<
+              AlterTableResult_OptionsEntry_DoNotUse,
+              std::string, std::string,
+              ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+              ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::TYPE_STRING,
+              0 >,
+            ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string > > parser(&options_);
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessageNoVirtual(
+              input, &parser));
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+            parser.key().data(), static_cast<int>(parser.key().length()),
+            ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
+            "MySqlParseService.AlterTableResult.OptionsEntry.key"));
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+            parser.value().data(), static_cast<int>(parser.value().length()),
+            ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
+            "MySqlParseService.AlterTableResult.OptionsEntry.value"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // repeated .MySqlParseService.AlterTableResult.Item items = 5;
+      case 5: {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (42 & 0xFF)) {
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadMessage(
+                input, add_items()));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      // string signature = 6;
+      case 6: {
+        if (static_cast< ::PROTOBUF_NAMESPACE_ID::uint8>(tag) == (50 & 0xFF)) {
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::ReadString(
+                input, this->mutable_signature()));
+          DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+            this->signature().data(), static_cast<int>(this->signature().length()),
+            ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::PARSE,
+            "MySqlParseService.AlterTableResult.signature"));
+        } else {
+          goto handle_unusual;
+        }
+        break;
+      }
+
+      default: {
+      handle_unusual:
+        if (tag == 0) {
+          goto success;
+        }
+        DO_(::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SkipField(
+              input, tag, _internal_metadata_.mutable_unknown_fields()));
+        break;
+      }
+    }
+  }
+success:
+  // @@protoc_insertion_point(parse_success:MySqlParseService.AlterTableResult)
+  return true;
+failure:
+  // @@protoc_insertion_point(parse_failure:MySqlParseService.AlterTableResult)
+  return false;
+#undef DO_
+}
+#endif  // GOOGLE_PROTOBUF_ENABLE_EXPERIMENTAL_PARSER
+
+void AlterTableResult::SerializeWithCachedSizes(
+    ::PROTOBUF_NAMESPACE_ID::io::CodedOutputStream* output) const {
+  // @@protoc_insertion_point(serialize_start:MySqlParseService.AlterTableResult)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string name = 1;
+  if (this->name().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->name().data(), static_cast<int>(this->name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "MySqlParseService.AlterTableResult.name");
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringMaybeAliased(
+      1, this->name(), output);
+  }
+
+  // string raw_query = 2;
+  if (this->raw_query().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->raw_query().data(), static_cast<int>(this->raw_query().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "MySqlParseService.AlterTableResult.raw_query");
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringMaybeAliased(
+      2, this->raw_query(), output);
+  }
+
+  // bool modify_partition = 3;
+  if (this->modify_partition() != 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBool(3, this->modify_partition(), output);
+  }
+
+  // map<string, string> options = 4;
+  if (!this->options().empty()) {
+    typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_pointer
+        ConstPtr;
+    typedef ConstPtr SortItem;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByDerefFirst<SortItem> Less;
+    struct Utf8Check {
+      static void Check(ConstPtr p) {
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+          p->first.data(), static_cast<int>(p->first.length()),
+          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+          "MySqlParseService.AlterTableResult.OptionsEntry.key");
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+          p->second.data(), static_cast<int>(p->second.length()),
+          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+          "MySqlParseService.AlterTableResult.OptionsEntry.value");
+      }
+    };
+
+    if (output->IsSerializationDeterministic() &&
+        this->options().size() > 1) {
+      ::std::unique_ptr<SortItem[]> items(
+          new SortItem[this->options().size()]);
+      typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::size_type size_type;
+      size_type n = 0;
+      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+          it = this->options().begin();
+          it != this->options().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      for (size_type i = 0; i < n; i++) {
+        AlterTableResult_OptionsEntry_DoNotUse::MapEntryWrapper entry(nullptr, items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second);
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(4, entry, output);
+        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
+      }
+    } else {
+      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+          it = this->options().begin();
+          it != this->options().end(); ++it) {
+        AlterTableResult_OptionsEntry_DoNotUse::MapEntryWrapper entry(nullptr, it->first, it->second);
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(4, entry, output);
+        Utf8Check::Check(&(*it));
+      }
+    }
+  }
+
+  // repeated .MySqlParseService.AlterTableResult.Item items = 5;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->items_size()); i < n; i++) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteMessageMaybeToArray(
+      5,
+      this->items(static_cast<int>(i)),
+      output);
+  }
+
+  // string signature = 6;
+  if (this->signature().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->signature().data(), static_cast<int>(this->signature().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "MySqlParseService.AlterTableResult.signature");
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringMaybeAliased(
+      6, this->signature(), output);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFields(
+        _internal_metadata_.unknown_fields(), output);
+  }
+  // @@protoc_insertion_point(serialize_end:MySqlParseService.AlterTableResult)
+}
+
+::PROTOBUF_NAMESPACE_ID::uint8* AlterTableResult::InternalSerializeWithCachedSizesToArray(
+    ::PROTOBUF_NAMESPACE_ID::uint8* target) const {
+  // @@protoc_insertion_point(serialize_to_array_start:MySqlParseService.AlterTableResult)
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // string name = 1;
+  if (this->name().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->name().data(), static_cast<int>(this->name().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "MySqlParseService.AlterTableResult.name");
+    target =
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
+        1, this->name(), target);
+  }
+
+  // string raw_query = 2;
+  if (this->raw_query().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->raw_query().data(), static_cast<int>(this->raw_query().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "MySqlParseService.AlterTableResult.raw_query");
+    target =
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
+        2, this->raw_query(), target);
+  }
+
+  // bool modify_partition = 3;
+  if (this->modify_partition() != 0) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteBoolToArray(3, this->modify_partition(), target);
+  }
+
+  // map<string, string> options = 4;
+  if (!this->options().empty()) {
+    typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_pointer
+        ConstPtr;
+    typedef ConstPtr SortItem;
+    typedef ::PROTOBUF_NAMESPACE_ID::internal::CompareByDerefFirst<SortItem> Less;
+    struct Utf8Check {
+      static void Check(ConstPtr p) {
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+          p->first.data(), static_cast<int>(p->first.length()),
+          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+          "MySqlParseService.AlterTableResult.OptionsEntry.key");
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+          p->second.data(), static_cast<int>(p->second.length()),
+          ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+          "MySqlParseService.AlterTableResult.OptionsEntry.value");
+      }
+    };
+
+    if (false &&
+        this->options().size() > 1) {
+      ::std::unique_ptr<SortItem[]> items(
+          new SortItem[this->options().size()]);
+      typedef ::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::size_type size_type;
+      size_type n = 0;
+      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+          it = this->options().begin();
+          it != this->options().end(); ++it, ++n) {
+        items[static_cast<ptrdiff_t>(n)] = SortItem(&*it);
+      }
+      ::std::sort(&items[0], &items[static_cast<ptrdiff_t>(n)], Less());
+      for (size_type i = 0; i < n; i++) {
+        AlterTableResult_OptionsEntry_DoNotUse::MapEntryWrapper entry(nullptr, items[static_cast<ptrdiff_t>(i)]->first, items[static_cast<ptrdiff_t>(i)]->second);
+        target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::InternalWriteMessageNoVirtualToArray(4, entry, target);
+        Utf8Check::Check(&(*items[static_cast<ptrdiff_t>(i)]));
+      }
+    } else {
+      for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+          it = this->options().begin();
+          it != this->options().end(); ++it) {
+        AlterTableResult_OptionsEntry_DoNotUse::MapEntryWrapper entry(nullptr, it->first, it->second);
+        target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::InternalWriteMessageNoVirtualToArray(4, entry, target);
+        Utf8Check::Check(&(*it));
+      }
+    }
+  }
+
+  // repeated .MySqlParseService.AlterTableResult.Item items = 5;
+  for (unsigned int i = 0,
+      n = static_cast<unsigned int>(this->items_size()); i < n; i++) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+      InternalWriteMessageToArray(
+        5, this->items(static_cast<int>(i)), target);
+  }
+
+  // string signature = 6;
+  if (this->signature().size() > 0) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->signature().data(), static_cast<int>(this->signature().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "MySqlParseService.AlterTableResult.signature");
+    target =
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::WriteStringToArray(
+        6, this->signature(), target);
+  }
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::SerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields(), target);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:MySqlParseService.AlterTableResult)
+  return target;
+}
+
+size_t AlterTableResult::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:MySqlParseService.AlterTableResult)
+  size_t total_size = 0;
+
+  if (_internal_metadata_.have_unknown_fields()) {
+    total_size +=
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormat::ComputeUnknownFieldsSize(
+        _internal_metadata_.unknown_fields());
+  }
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // map<string, string> options = 4;
+  total_size += 1 *
+      ::PROTOBUF_NAMESPACE_ID::internal::FromIntSize(this->options_size());
+  for (::PROTOBUF_NAMESPACE_ID::Map< std::string, std::string >::const_iterator
+      it = this->options().begin();
+      it != this->options().end(); ++it) {
+    AlterTableResult_OptionsEntry_DoNotUse::MapEntryWrapper entry(nullptr, it->first, it->second);
+    total_size += ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
+        MessageSizeNoVirtual(entry);
+  }
+
+  // repeated .MySqlParseService.AlterTableResult.Item items = 5;
+  {
+    unsigned int count = static_cast<unsigned int>(this->items_size());
+    total_size += 1UL * count;
+    for (unsigned int i = 0; i < count; i++) {
+      total_size +=
+        ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
+          this->items(static_cast<int>(i)));
+    }
+  }
+
+  // string name = 1;
+  if (this->name().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->name());
+  }
+
+  // string raw_query = 2;
+  if (this->raw_query().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->raw_query());
+  }
+
+  // string signature = 6;
+  if (this->signature().size() > 0) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->signature());
+  }
+
+  // bool modify_partition = 3;
+  if (this->modify_partition() != 0) {
+    total_size += 1 + 1;
+  }
+
+  int cached_size = ::PROTOBUF_NAMESPACE_ID::internal::ToCachedSize(total_size);
+  SetCachedSize(cached_size);
+  return total_size;
+}
+
+void AlterTableResult::MergeFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_merge_from_start:MySqlParseService.AlterTableResult)
+  GOOGLE_DCHECK_NE(&from, this);
+  const AlterTableResult* source =
+      ::PROTOBUF_NAMESPACE_ID::DynamicCastToGenerated<AlterTableResult>(
+          &from);
+  if (source == nullptr) {
+  // @@protoc_insertion_point(generalized_merge_from_cast_fail:MySqlParseService.AlterTableResult)
+    ::PROTOBUF_NAMESPACE_ID::internal::ReflectionOps::Merge(from, this);
+  } else {
+  // @@protoc_insertion_point(generalized_merge_from_cast_success:MySqlParseService.AlterTableResult)
+    MergeFrom(*source);
+  }
+}
+
+void AlterTableResult::MergeFrom(const AlterTableResult& from) {
+// @@protoc_insertion_point(class_specific_merge_from_start:MySqlParseService.AlterTableResult)
+  GOOGLE_DCHECK_NE(&from, this);
+  _internal_metadata_.MergeFrom(from._internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::uint32 cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  options_.MergeFrom(from.options_);
+  items_.MergeFrom(from.items_);
+  if (from.name().size() > 0) {
+
+    name_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.name_);
+  }
+  if (from.raw_query().size() > 0) {
+
+    raw_query_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.raw_query_);
+  }
+  if (from.signature().size() > 0) {
+
+    signature_.AssignWithDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), from.signature_);
+  }
+  if (from.modify_partition() != 0) {
+    set_modify_partition(from.modify_partition());
+  }
+}
+
+void AlterTableResult::CopyFrom(const ::PROTOBUF_NAMESPACE_ID::Message& from) {
+// @@protoc_insertion_point(generalized_copy_from_start:MySqlParseService.AlterTableResult)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+void AlterTableResult::CopyFrom(const AlterTableResult& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:MySqlParseService.AlterTableResult)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AlterTableResult::IsInitialized() const {
+  return true;
+}
+
+void AlterTableResult::Swap(AlterTableResult* other) {
+  if (other == this) return;
+  InternalSwap(other);
+}
+void AlterTableResult::InternalSwap(AlterTableResult* other) {
+  using std::swap;
+  _internal_metadata_.Swap(&other->_internal_metadata_);
+  options_.Swap(&other->options_);
+  CastToBase(&items_)->InternalSwap(CastToBase(&other->items_));
+  name_.Swap(&other->name_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  raw_query_.Swap(&other->raw_query_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  signature_.Swap(&other->signature_, &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
+    GetArenaNoVirtual());
+  swap(modify_partition_, other->modify_partition_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata AlterTableResult::GetMetadata() const {
+  return GetMetadataStatic();
+}
+
+
+// ===================================================================
+
 void Response::InitAsDefaultInstance() {
 }
 class Response::HasBitSetters {
@@ -3383,6 +4702,15 @@ template<> PROTOBUF_NOINLINE ::MySqlParseService::CreateTableResult_OptionsEntry
 }
 template<> PROTOBUF_NOINLINE ::MySqlParseService::CreateTableResult* Arena::CreateMaybeMessage< ::MySqlParseService::CreateTableResult >(Arena* arena) {
   return Arena::CreateInternal< ::MySqlParseService::CreateTableResult >(arena);
+}
+template<> PROTOBUF_NOINLINE ::MySqlParseService::AlterTableResult_OptionsEntry_DoNotUse* Arena::CreateMaybeMessage< ::MySqlParseService::AlterTableResult_OptionsEntry_DoNotUse >(Arena* arena) {
+  return Arena::CreateInternal< ::MySqlParseService::AlterTableResult_OptionsEntry_DoNotUse >(arena);
+}
+template<> PROTOBUF_NOINLINE ::MySqlParseService::AlterTableResult_Item* Arena::CreateMaybeMessage< ::MySqlParseService::AlterTableResult_Item >(Arena* arena) {
+  return Arena::CreateInternal< ::MySqlParseService::AlterTableResult_Item >(arena);
+}
+template<> PROTOBUF_NOINLINE ::MySqlParseService::AlterTableResult* Arena::CreateMaybeMessage< ::MySqlParseService::AlterTableResult >(Arena* arena) {
+  return Arena::CreateInternal< ::MySqlParseService::AlterTableResult >(arena);
 }
 template<> PROTOBUF_NOINLINE ::MySqlParseService::Response* Arena::CreateMaybeMessage< ::MySqlParseService::Response >(Arena* arena) {
   return Arena::CreateInternal< ::MySqlParseService::Response >(arena);

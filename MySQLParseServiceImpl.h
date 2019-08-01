@@ -19,8 +19,12 @@ class MySQLParseServiceImpl final : public MySqlParseService::ParseService::Serv
 
     void parse_create_table(antlr4::ParserRuleContext *ctx, MySqlParseService::Response *response);
 
-    template<typename L, typename R>
-    R do_parse(antlr4::ParserRuleContext *ctx);
+    void parse_alter(antlr4::ParserRuleContext *ctx, MySqlParseService::Response *response);
+
+    void parse_alter_table(antlr4::ParserRuleContext *ctx, MySqlParseService::Response *response);
+
+    template<template<typename> class __LISTENER_TYPE, typename __RESULT_TYPE>
+    __RESULT_TYPE do_parse(antlr4::ParserRuleContext *ctx);
 
     static std::string get_rawsql(antlr4::ParserRuleContext *ctx);
 

@@ -16,6 +16,7 @@ message ResultWrapper {
     oneof result {
         CreateTableResult create_table_result = 1;
         SelectResult select_result = 2;
+        AlterTableResult alter_table_result = 3;
     }
 }
 
@@ -47,6 +48,22 @@ message CreateTableResult {
     string raw_query = 8;
 }
 
+message AlterTableResult {
+    string name = 1;
+    string raw_query = 2;
+    bool modify_partition = 3;
+    map<string, string> options = 4;
+    message Item {
+        string action = 1;
+        string type = 2;
+        string name = 3;
+        string detail = 4;
+    }
+    repeated Item items = 5;
+    string signature = 6;
+}
+
 message Response {
     repeated ResultWrapper results = 1;
 }
+

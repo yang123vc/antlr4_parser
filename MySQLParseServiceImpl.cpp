@@ -6,9 +6,10 @@
 #include <antlr4-runtime.h>
 #include "mysql/MySQLLexer.h"
 #include "mysql/MySQLParser.h"
-#include "listeners/QueryListener.h"
-#include "listeners/SelectListener.h"
-#include "listeners/CreateTableListener.h"
+#include "listeners/QueryListener.hpp"
+#include "listeners/SelectListener.hpp"
+#include "listeners/CreateTableListener.hpp"
+#include "listeners/AlterTableListener.hpp"
 
 
 grpc::Status
@@ -36,6 +37,9 @@ MySQLParseServiceImpl::ParseQuery(::grpc::ServerContext *context, const ::MySqlP
             case parsers::MySQLParser::RuleCreateStatement:
                 parse_create(simpleStatChildCtx, response);
                 break;
+            case parsers::MySQLParser::RuleAlterStatement:
+                parse_alter(simpleStatChildCtx, response);
+                break;
             default:
                 break;
         }
@@ -48,11 +52,11 @@ MySQLParseServiceImpl::ParseQuery(::grpc::ServerContext *context, const ::MySqlP
 }
 
 
-template<typename __LISTENER_TYPE, typename __RESULT_TYPE>
+template<template<typename> class __LISTENER_TYPE, typename __RESULT_TYPE>
 __RESULT_TYPE MySQLParseServiceImpl::do_parse(antlr4::ParserRuleContext *ctx) {
     string raw_query = get_rawsql(ctx);
     antlr4::tree::ParseTreeWalker walker;
-    __LISTENER_TYPE listener;
+    __LISTENER_TYPE<__RESULT_TYPE> listener;
     walker.walk(&listener, ctx);
     auto result = listener.get_result();
     result.set_raw_query(raw_query);
@@ -88,5 +92,21 @@ void MySQLParseServiceImpl::parse_create_table(antlr4::ParserRuleContext *ctx, M
     MySqlParseService::ResultWrapper wrapper;
     auto result = do_parse<CreateTableListener, MySqlParseService::CreateTableResult>(ctx);
     wrapper.mutable_create_table_result()->CopyFrom(result);
+    response->mutable_results()->Add(std::move(wrapper));
+}
+
+void MySQLParseServiceImpl::parse_alter(antlr4::ParserRuleContext *ctx, MySqlParseService::Response *response) {
+    auto alterCtx = dynamic_cast<parsers::MySQLParser::AlterStatementContext *>(ctx);
+    if (alterCtx->alterTable()) {
+        parse_alter_table(ctx, response);
+    } else {
+
+    }
+}
+
+void MySQLParseServiceImpl::parse_alter_table(antlr4::ParserRuleContext *ctx, MySqlParseService::Response *response) {
+    MySqlParseService::ResultWrapper wrapper;
+    auto result = do_parse<AlterTableListener, MySqlParseService::AlterTableResult>(ctx);
+    wrapper.mutable_alter_table_result()->CopyFrom(result);
     response->mutable_results()->Add(std::move(wrapper));
 }
